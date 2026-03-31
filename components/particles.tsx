@@ -1,0 +1,72 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
+interface Particle {
+  id: number
+  x: number
+  y: number
+  size: number
+  opacity: number
+  animationDuration: number
+  animationDelay: number
+}
+
+export function Particles() {
+  const [particles, setParticles] = useState<Particle[]>([])
+
+  useEffect(() => {
+    const generateParticles = () => {
+      const newParticles: Particle[] = []
+      for (let i = 0; i < 50; i++) {
+        newParticles.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 4 + 2,
+          opacity: Math.random() * 0.5 + 0.2,
+          animationDuration: Math.random() * 20 + 10,
+          animationDelay: Math.random() * 5,
+        })
+      }
+      setParticles(newParticles)
+    }
+    generateParticles()
+  }, [])
+
+  return (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {particles.map((particle) => (
+        <div
+          key={particle.id}
+          className="absolute rounded-full bg-primary/60"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            animation: `float ${particle.animationDuration}s ease-in-out infinite`,
+            animationDelay: `${particle.animationDelay}s`,
+          }}
+        />
+      ))}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(-10px) translateX(-10px);
+          }
+          75% {
+            transform: translateY(-30px) translateX(5px);
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
