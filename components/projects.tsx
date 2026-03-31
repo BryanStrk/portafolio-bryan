@@ -2,46 +2,52 @@ import { ProjectCard } from "@/components/project-card"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Plataforma de comercio electronico completa con carrito de compras, pagos integrados y panel de administracion.",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Library Management System",
+    description:
+      "Sistema full stack de gestión de biblioteca con frontend y backend separados. Incluye gestión de usuarios, préstamos y lógica de negocio conectada a base de datos.",
+    tags: ["Java", "MySQL", "Angular", "Full Stack"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/biblioteca-backend.git",
   },
   {
-    title: "Task Management App",
-    description: "Aplicacion de gestion de tareas con drag and drop, colaboracion en tiempo real y notificaciones.",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Smart Menu (Team Project)",
+    description:
+      "Aplicación full stack desarrollada en equipo para la gestión de menús digitales. Participé en el desarrollo del backend, creación de endpoints REST y conexión con la base de datos, además de colaborar en la integración con el frontend.",
+    tags: ["Java", "Spring Boot", "Full Stack", "Team Project"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/smart-menu-back.git",
   },
   {
-    title: "AI Content Generator",
-    description: "Herramienta de generacion de contenido impulsada por IA para marketing y redes sociales.",
-    tags: ["Next.js", "OpenAI", "Vercel AI", "Prisma"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Transport API",
+    description:
+      "API REST desarrollada con Spring Boot y MongoDB para la gestión de transporte de mercancías, enfocada en estructura backend y diseño de endpoints.",
+    tags: ["Spring Boot", "MongoDB", "API REST", "Java"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/api-transporte-mercancias-springboot-mongodb.git",
   },
   {
-    title: "Real Estate Platform",
-    description: "Plataforma inmobiliaria con busqueda avanzada, mapas interactivos y sistema de citas.",
-    tags: ["React", "Mapbox", "Express", "PostgreSQL"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Video Club System",
+    description:
+      "Sistema de gestión de videoclub desarrollado en Java con arquitectura MVC y persistencia en MySQL, orientado a la organización del código y lógica de negocio.",
+    tags: ["Java", "MVC", "MySQL", "Backend"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/video_club_app_backend.git",
   },
   {
-    title: "Fitness Tracker",
-    description: "App de seguimiento de ejercicios con estadisticas, planes personalizados y comunidad.",
-    tags: ["React Native", "Firebase", "Charts", "Auth"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Java VideoClub App",
+    description:
+      "Aplicación desarrollada en Java puro centrada en la lógica de negocio, estructuras de datos y organización modular del proyecto.",
+    tags: ["Java", "Backend", "Logic", "OOP"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/videoClub_app_Java_puro.git",
   },
   {
-    title: "SaaS Dashboard",
-    description: "Dashboard empresarial con analiticas en tiempo real, reportes automatizados y gestion de equipos.",
-    tags: ["Next.js", "Recharts", "Supabase", "Stripe"],
-    liveUrl: "https://ejemplo.com",
-    githubUrl: "https://github.com",
+    title: "Portfolio Web",
+    description:
+      "Portfolio personal desarrollado con Next.js y Tailwind CSS, con diseño moderno, secciones dinámicas y despliegue en Vercel.",
+    tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    liveUrl: "",
+    githubUrl: "https://github.com/BryanStrk/portafolio-bryan.git",
   },
 ]
 
@@ -51,10 +57,11 @@ export function Projects() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="text-primary">Projects</span> ({projects.length})
+            Mis <span className="text-primary">Proyectos</span> ({projects.length})
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Browse through my recent projects and discover the solutions I&apos;ve built.
+            Una selección de proyectos en los que he trabajado, enfocados en desarrollo full stack,
+            backend y bases de datos.
           </p>
         </div>
 
