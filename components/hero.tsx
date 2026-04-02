@@ -20,15 +20,6 @@ function fadeUp(delay: number) {
   }
 }
 
-const particles = Array.from({ length: 22 }, (_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  size: Math.random() * 2.5 + 1,
-  duration: Math.random() * 6 + 5,
-  delay: Math.random() * 4,
-}))
-
 const codeLines = [
   { label: "frontend", value: "'Angular'" },
   { label: "backend", value: "'Java + Spring'" },
@@ -36,19 +27,28 @@ const codeLines = [
   { label: "meta", value: "'Next.js'" },
 ]
 
+const GREETING = "Hola, Soy"
+const NAME = "Bryan Paico"
+
 export function Hero() {
   const [visibleLines, setVisibleLines] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   const particles = useMemo(() =>
-  Array.from({ length: 22 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 2.5 + 1,
-    duration: Math.random() * 3 + 2,
-    delay: Math.random() * 2,
-  })), []
-)
+    Array.from({ length: 22 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2.5 + 1,
+      duration: Math.random() * 3 + 2,
+      delay: Math.random() * 2,
+    })), []
+  )
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 200)
+    return () => clearTimeout(t)
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,28 +68,20 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden px-4 pt-28 pb-16"
     >
-      {/* Top accent line */}
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
-      {/* Partículas flotantes */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {particles.map((p) => (
           <motion.div
             key={p.id}
             className="absolute rounded-full bg-primary/40"
-            style={{
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-              width: p.size,
-              height: p.size,
-            }}
+            style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
             animate={{ y: [0, -30, 0], opacity: [0.2, 0.7, 0.2] }}
             transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
           />
         ))}
       </div>
 
-      {/* Background orbs */}
       <div className="animate-glow-pulse pointer-events-none absolute top-20 left-1/4 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
       <div className="pointer-events-none absolute bottom-24 right-8 h-64 w-64 rounded-full bg-primary/8 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-1/3 h-48 w-48 rounded-full bg-accent/[0.07] blur-2xl" />
@@ -97,7 +89,6 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_360px]">
 
-          {/* LEFT */}
           <div>
             <motion.div
               {...fadeUp(0)}
@@ -107,36 +98,51 @@ export function Hero() {
               Disponible para proyectos
             </motion.div>
 
-            <motion.h1
-              {...fadeUp(1)}
-              className="mb-6 max-w-2xl text-6xl leading-[1.04] tracking-tight md:text-7xl lg:text-[5.5rem]"
-            >
-              
-              <span className="font-bold text-foreground">Hola, Soy</span>
-              <br />
-              <span className="font-extralight text-foreground/40">Bryan Paico </span>
-              <br />
-            </motion.h1>
+            <h1 className="mb-6 max-w-2xl text-6xl leading-[1.1] tracking-tight md:text-7xl lg:text-[5.5rem]">
+              {/* GREETING — letra a letra blanco */}
+              <span className="inline-flex flex-wrap">
+                {GREETING.split("").map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                    animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                    transition={{ delay: 0.1 + i * 0.06, duration: 0.5, ease: easing }}
+                    className="font-bold text-foreground inline-block"
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
+              </span>
 
-            <motion.p
-              {...fadeUp(2)}
-              className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/45">
+              <br />
+
+              {/* NAME — letra a letra con gradiente animado */}
+              <span className="inline-flex flex-wrap">
+                {NAME.split("").map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                    animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                    transition={{ delay: 0.1 + (GREETING.length * 0.06) + i * 0.06, duration: 0.5, ease: easing }}
+                    className="font-bold inline-block animated-gradient-text"
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
+              </span>
+            </h1>
+
+            <motion.p {...fadeUp(2)} className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/45">
               Full Stack Developer
             </motion.p>
 
-            <motion.p
-              {...fadeUp(3)}
-              className="mb-10 max-w-lg text-base leading-relaxed text-muted-foreground"
-            >
+            <motion.p {...fadeUp(3)} className="mb-10 max-w-lg text-base leading-relaxed text-muted-foreground">
               Desarrollador web enfocado en crear aplicaciones funcionales, limpias y escalables.
               Trabajo principalmente con Angular, Java, MySQL y tecnologías modernas para construir
               soluciones reales.
             </motion.p>
 
-            <motion.div
-              {...fadeUp(4)}
-              className="mb-10 flex flex-wrap gap-3"
-            >
+            <motion.div {...fadeUp(4)} className="mb-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
                 className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)] transition-all duration-200 hover:bg-primary/88 hover:gap-3 hover:shadow-[0_0_32px_hsl(var(--primary)/0.5)]"
@@ -152,10 +158,7 @@ export function Hero() {
               </a>
             </motion.div>
 
-            <motion.div
-              {...fadeUp(5)}
-              className="flex flex-wrap items-center gap-5"
-            >
+            <motion.div {...fadeUp(5)} className="flex flex-wrap items-center gap-5">
               <div className="flex items-center gap-2">
                 {socialLinks.map((social) => (
                   <a
@@ -186,11 +189,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT */}
-          <motion.div
-            {...fadeUp(2)}
-            className="relative hidden lg:block"
-          >
+          <motion.div {...fadeUp(2)} className="relative hidden lg:block">
             <div className="pointer-events-none absolute -inset-6 rounded-2xl bg-primary/12 blur-2xl" />
             <div className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/6 blur-xl" />
 
@@ -267,7 +266,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/10 bg-white/[0.02] p-1.5">
           <motion.div

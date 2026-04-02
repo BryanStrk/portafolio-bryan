@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
@@ -12,6 +12,27 @@ const navItems = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    )
+
+    navItems.forEach(({ href }) => {
+      const el = document.querySelector(href)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -25,15 +46,22 @@ export function Header() {
           </a>
 
           <nav className="hidden md:flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.03] p-1">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-all duration-300 hover:bg-primary/12 hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "")
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
+                    isActive
+                      ? "bg-primary/15 text-primary font-medium"
+                      : "text-muted-foreground hover:bg-primary/12 hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              )
+            })}
           </nav>
 
           <button
@@ -48,16 +76,23 @@ export function Header() {
         {isMenuOpen && (
           <div className="blue-glow md:hidden mt-3 rounded-[1.75rem] border border-white/10 bg-background/95 px-6 py-4 backdrop-blur-xl">
             <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-2xl px-3 py-2 text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.replace("#", "")
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className={`rounded-2xl px-3 py-2 transition-all ${
+                      isActive
+                        ? "bg-primary/15 text-primary font-medium"
+                        : "text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
+              })}
             </nav>
           </div>
         )}

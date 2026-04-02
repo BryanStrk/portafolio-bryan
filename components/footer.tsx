@@ -1,56 +1,95 @@
+"use client"
+
 import { Github, Linkedin, Mail } from "lucide-react"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/BryanStrk", label: "GitHub" },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/bryan-alejandro-paico-albines-5560142b0/",
-    label: "LinkedIn",
-  },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/bryan-alejandro-paico-albines-5560142b0/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:bryanpaicoalbines97@gmail.com", label: "Email" },
+  { icon: null, href: "https://api.whatsapp.com/send?phone=34623505527&text=Hola%20Bryan!%20Me%20contacto%20contigo%20desde%20tu%20portfolio", label: "WhatsApp" },
 ]
+
+const hoverColors: Record<string, string> = {
+  GitHub:   "#24292e",
+  LinkedIn: "#0077B5",
+  Email:    "#DC143C",
+  WhatsApp: "#25D366",
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  )
+}
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden py-20">
+    <footer className="relative overflow-hidden py-16">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-8 h-48 w-[34rem] -translate-x-1/2 rounded-full bg-primary/16 blur-3xl" />
-        <div className="absolute right-10 bottom-10 h-40 w-40 rounded-full bg-sky-400/8 blur-3xl" />
+        <div className="absolute left-1/2 top-8 h-48 w-[34rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       </div>
 
       <div className="container relative mx-auto px-4">
-        <div className="section-shell blue-glow mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 rounded-[3rem] px-8 py-18 text-center md:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-primary/80">
-            Gracias por visitar
-          </p>
+        <div className="mx-auto max-w-5xl">
 
-          
+          <div className="flex flex-col items-center gap-10 rounded-[2rem] border border-white/8 bg-card/40 px-8 py-10 backdrop-blur-sm md:flex-row md:justify-between md:gap-6">
 
-          
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {socialLinks.map((social) => (
+            <div className="flex flex-col gap-2 text-center md:text-left">
+              <h2 className="text-2xl font-bold text-primary">BryanStrk</h2>
+              <p className="text-muted-foreground">Full Stack Developer</p>
               <a
-                key={social.label}
-                href={social.href}
-                target={social.href.startsWith("http") ? "_blank" : undefined}
-                rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                aria-label={social.label}
-                className="blue-glow group relative flex h-14 min-w-14 items-center justify-center gap-2 rounded-full border border-white/10 bg-background/70 px-5 text-sm font-medium text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:text-primary"
+                href="https://github.com/BryanStrk/portafolio-bryan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-sm text-muted-foreground/60 transition-colors hover:text-primary"
               >
-                <social.icon className="relative h-4 w-4" />
-                <span>{social.label}</span>
+                Ver el repositorio
               </a>
-            ))}
+            </div>
+
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-muted-foreground transition-all duration-300 hover:-translate-y-1"
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget
+                    el.style.backgroundColor = hoverColors[social.label]
+                    el.style.borderColor = hoverColors[social.label]
+                    el.style.color = "white"
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget
+                    el.style.backgroundColor = ""
+                    el.style.borderColor = ""
+                    el.style.color = ""
+                  }}
+                >
+                  {social.label === "WhatsApp"
+                    ? <WhatsAppIcon />
+                    : social.icon && <social.icon className="h-5 w-5" />
+                  }
+                </a>
+              ))}
+            </div>
+
           </div>
 
-          <div className="w-full max-w-4xl border-t border-white/10 pt-8">
-            <p className="text-center text-sm text-muted-foreground md:text-base">
-              © {currentYear} Bryan Paico. Todos los derechos reservados.
+          <div className="mt-6 text-center">
+            <p className="text-sm text-muted-foreground/50">
+              © {currentYear} All rights reserved.{" "}
+              <span className="text-primary">Powered by BryanStrk</span>
             </p>
           </div>
+
         </div>
       </div>
     </footer>
