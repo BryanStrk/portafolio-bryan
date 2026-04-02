@@ -18,14 +18,14 @@ export function Particles() {
   useEffect(() => {
     const generateParticles = () => {
       const newParticles: Particle[] = []
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 32; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * 4 + 2,
-          opacity: Math.random() * 0.5 + 0.2,
-          animationDuration: Math.random() * 20 + 10,
+          size: Math.random() * 3 + 1,
+          opacity: Math.random() * 0.25 + 0.08,
+          animationDuration: Math.random() * 24 + 14,
           animationDelay: Math.random() * 5,
         })
       }
@@ -39,7 +39,7 @@ export function Particles() {
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute rounded-full bg-primary/60"
+          className="absolute rounded-full bg-primary/60 blur-[1px]"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,

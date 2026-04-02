@@ -1,5 +1,5 @@
 import { ProjectCard } from "@/components/project-card"
-
+ 
 const projects = [
   {
     title: "Library Management System",
@@ -8,14 +8,16 @@ const projects = [
     tags: ["Java", "MySQL", "Angular", "Full Stack"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/biblioteca-backend.git",
+    status: "In Prod" as const,
   },
   {
     title: "Smart Menu (Team Project)",
     description:
-      "Aplicación full stack desarrollada en equipo para la gestión de menús digitales. Participé en el desarrollo del backend, creación de endpoints REST y conexión con la base de datos, además de colaborar en la integración con el frontend.",
+      "Aplicación full stack desarrollada en equipo para la gestión de menús digitales. Participé en el desarrollo del backend, creación de endpoints REST y conexión con la base de datos.",
     tags: ["Java", "Spring Boot", "Full Stack", "Team Project"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/smart-menu-back.git",
+    status: "In Prod" as const,
   },
   {
     title: "Transport API",
@@ -24,6 +26,7 @@ const projects = [
     tags: ["Spring Boot", "MongoDB", "API REST", "Java"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/api-transporte-mercancias-springboot-mongodb.git",
+    status: "In Prod" as const,
   },
   {
     title: "Video Club System",
@@ -32,6 +35,7 @@ const projects = [
     tags: ["Java", "MVC", "MySQL", "Backend"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/video_club_app_backend.git",
+    status: "In Prod" as const,
   },
   {
     title: "Java VideoClub App",
@@ -40,6 +44,7 @@ const projects = [
     tags: ["Java", "Backend", "Logic", "OOP"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/videoClub_app_Java_puro.git",
+    status: "In Prod" as const,
   },
   {
     title: "Portfolio Web",
@@ -48,26 +53,30 @@ const projects = [
     tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/portafolio-bryan.git",
+    status: "In Dev" as const,
   },
 ]
-
+ 
 export function Projects() {
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mis <span className="text-primary">Proyectos</span> ({projects.length})
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary/80">
+            Trabajo seleccionado
+          </p>
+          <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
+            Proyectos con una base técnica clara y una presentación más cuidada
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Una selección de proyectos en los que he trabajado, enfocados en desarrollo full stack,
-            backend y bases de datos.
+          <p className="mx-auto max-w-2xl text-muted-foreground text-pretty">
+            Una selección de proyectos enfocados en desarrollo full stack, backend y bases de
+            datos. Cada tarjeta destaca stack, contexto y acceso al código de forma visual.
           </p>
         </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+ 
+        <div className="grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} index={index + 1} {...project} />
           ))}
         </div>
       </div>

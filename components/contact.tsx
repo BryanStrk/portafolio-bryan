@@ -29,44 +29,51 @@ const contactLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-card/30">
+    <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Contacto <span className="text-primary">Profesional</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Si quieres contactar conmigo para una oportunidad, colaboración o proyecto,
-            puedes encontrarme en estos enlaces.
-          </p>
-        </div>
+        <div className="section-shell mx-auto max-w-5xl rounded-[2rem] px-6 py-10 md:px-10 md:py-14">
+          <div className="mb-12 text-center">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary/80">
+              Contacto
+            </p>
+            <h2 className="mb-4 text-3xl font-semibold md:text-5xl">
+              Canales directos para oportunidades, colaboraciones y proyectos
+            </h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground text-pretty">
+              Si quieres contactar conmigo para una oportunidad, colaboración o proyecto, puedes
+              encontrarme aquí.
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {contactLinks.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-2xl border border-border bg-background/60 backdrop-blur-sm p-6 hover:border-primary/40 transition-colors"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <item.icon className="h-5 w-5 text-primary" />
-                </div>
+          <div className="grid max-w-4xl gap-6 mx-auto sm:grid-cols-2">
+            {contactLinks.map((item) => (
+              <div
+                key={item.label}
+                className="blue-glow group rounded-[1.5rem] border border-white/10 bg-background/65 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/14 bg-primary/10">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
 
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
+                  <div>
+                    <p className="mb-1 text-sm uppercase tracking-[0.16em] text-muted-foreground">
+                      {item.label}
+                    </p>
 
-                  <a
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="font-medium hover:text-primary transition-colors break-all"
-                  >
-                    {item.value}
-                  </a>
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="font-medium transition-colors hover:text-primary break-words"
+                    >
+                      {item.value}
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

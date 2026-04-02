@@ -4,9 +4,10 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Inicio", href: "#home" },
+  { label: "Sobre mí", href: "#about" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Contacto", href: "#contact" },
 ]
 
 export function Header() {
@@ -15,20 +16,20 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 md:px-6 pt-4">
-        <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/70 backdrop-blur-md px-6 py-4 shadow-lg shadow-primary/5">
+        <div className="blue-glow flex items-center justify-between rounded-full border border-white/10 bg-background/70 px-3 py-3 backdrop-blur-xl md:px-4">
           <a
             href="#home"
-            className="text-2xl font-bold text-primary tracking-tight"
+            className="rounded-full px-3 py-2 text-xl font-semibold tracking-[0.18em] text-primary uppercase"
           >
             Bryan<span className="text-foreground">.</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.03] p-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-all duration-300 hover:bg-primary/12 hover:text-primary"
               >
                 {item.label}
               </a>
@@ -36,7 +37,7 @@ export function Header() {
           </nav>
 
           <button
-            className="md:hidden text-foreground p-2"
+            className="md:hidden rounded-full border border-white/10 bg-white/[0.03] p-2 text-foreground transition-colors hover:border-primary/30 hover:text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Abrir menú"
           >
@@ -45,13 +46,13 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-3 rounded-2xl border border-white/10 bg-background/95 backdrop-blur-md px-6 py-4 shadow-lg shadow-primary/5">
+          <div className="blue-glow md:hidden mt-3 rounded-[1.75rem] border border-white/10 bg-background/95 px-6 py-4 backdrop-blur-xl">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors py-2 font-medium"
+                  className="rounded-2xl px-3 py-2 text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
