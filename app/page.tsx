@@ -22,10 +22,10 @@ export default function Home() {
       <Particles />
       <Header />
       <Hero />
-      <SectionReveal><About /></SectionReveal>
-      <SectionReveal><Projects /></SectionReveal>
-      <SectionReveal><Contact /></SectionReveal>
-      <SectionReveal><Footer /></SectionReveal>
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
       <ScrollToTop />
   
     </main>

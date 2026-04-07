@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Github, ArrowUpRight } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -52,18 +51,10 @@ export function ProjectCard({
   }, [githubUrl])
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, ease: [0.21, 1.02, 0.73, 1.0] }}
-      whileHover={{ y: -6, scale: 1.01 }}
-      className="card-aura group relative flex flex-col overflow-hidden rounded-xl border border-white/8 bg-card/70 transition-all duration-500 hover:border-primary/30"
-    >
+    <article className="card-aura group relative flex flex-col overflow-hidden rounded-xl border border-white/8 bg-card/70 transition-all duration-300 hover:border-primary/30 hover:-translate-y-1">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="pointer-events-none absolute -inset-1 rounded-xl bg-primary/8 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10" />
+      <div className="pointer-events-none absolute -inset-1 rounded-xl bg-primary/8 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
 
-      {/* Preview area */}
       <div className="relative aspect-video overflow-hidden border-b border-white/6 bg-muted/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(255_255_255/0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.03)_1px,transparent_1px)] bg-[size:28px_28px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgb(99_120_210/0.12),transparent_55%)]" />
@@ -78,7 +69,6 @@ export function ProjectCard({
           </span>
         </div>
 
-        {/* Tech badges en hover */}
         <div className="absolute inset-x-0 top-0 p-3 flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0 pt-12">
           {tags.slice(0, 3).map((tag) => (
             <span
@@ -90,7 +80,6 @@ export function ProjectCard({
           ))}
         </div>
 
-        {/* Hover overlay */}
         <div className="absolute inset-0 flex items-center justify-center gap-3 bg-background/65 opacity-0 backdrop-blur-[2px] transition-opacity duration-250 group-hover:opacity-100">
           {githubUrl && (
             <a
@@ -117,7 +106,6 @@ export function ProjectCard({
         </div>
       </div>
 
-      {/* Content */}
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col gap-1.5">
@@ -164,6 +152,6 @@ export function ProjectCard({
           ))}
         </div>
       </div>
-    </motion.article>
+    </article>
   )
 }
