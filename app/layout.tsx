@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono, Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${manrope.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
