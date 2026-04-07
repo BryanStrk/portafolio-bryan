@@ -38,7 +38,9 @@ export function Hero() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    const isMobileWidth = window.innerWidth < 768
+    setIsMobile(isIOS || isMobileWidth)
   }, [])
 
   const particles = useMemo(() => {
