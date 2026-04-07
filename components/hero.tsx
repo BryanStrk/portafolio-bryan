@@ -29,6 +29,7 @@ const codeLines = [
 
 const GREETING = "Hola, Soy"
 const NAME = "Bryan Paico"
+const CORNER_DELAY = 0.1 + (GREETING.length + NAME.length) * 0.06 + 0.3
 
 export function Hero() {
   const [visibleLines, setVisibleLines] = useState(0)
@@ -98,39 +99,55 @@ export function Hero() {
               Disponible para proyectos
             </motion.div>
 
-            <h1 className="mb-6 max-w-2xl text-6xl leading-[1.1] tracking-tight md:text-7xl lg:text-[5.5rem]">
-              {/* GREETING — letra a letra blanco */}
-              <span className="inline-flex flex-wrap">
-                {GREETING.split("").map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                    animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-                    transition={{ delay: 0.1 + i * 0.06, duration: 0.5, ease: easing }}
-                    className="font-bold text-foreground inline-block"
-                  >
-                    {letter === " " ? "\u00A0" : letter}
-                  </motion.span>
-                ))}
-              </span>
+            {/* Título con esquinas decorativas */}
+            <div className="relative inline-block mb-6">
+              {/* Esquina superior izquierda */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={mounted ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: CORNER_DELAY, duration: 0.4, ease: easing }}
+                className="absolute -top-4 -left-4 w-6 h-6 border-t-2 border-l-2 border-primary/60 rounded-tl-sm"
+              />
+              {/* Esquina inferior derecha */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={mounted ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: CORNER_DELAY, duration: 0.4, ease: easing }}
+                className="absolute -bottom-4 -right-4 w-6 h-6 border-b-2 border-r-2 border-primary/60 rounded-br-sm"
+              />
 
-              <br />
+              <h1 className="max-w-2xl text-6xl leading-[1.1] tracking-tight md:text-7xl lg:text-[5.5rem]">
+                <span className="inline-flex flex-wrap">
+                  {GREETING.split("").map((letter, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                      animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                      transition={{ delay: 0.1 + i * 0.06, duration: 0.5, ease: easing }}
+                      className="font-bold text-foreground inline-block"
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </motion.span>
+                  ))}
+                </span>
 
-              {/* NAME — letra a letra con gradiente animado */}
-              <span className="inline-flex flex-wrap">
-                {NAME.split("").map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                    animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-                    transition={{ delay: 0.1 + (GREETING.length * 0.06) + i * 0.06, duration: 0.5, ease: easing }}
-                    className="font-bold inline-block animated-gradient-text"
-                  >
-                    {letter === " " ? "\u00A0" : letter}
-                  </motion.span>
-                ))}
-              </span>
-            </h1>
+                <br />
+
+                <span className="inline-flex flex-wrap">
+                  {NAME.split("").map((letter, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                      animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                      transition={{ delay: 0.1 + (GREETING.length * 0.06) + i * 0.06, duration: 0.5, ease: easing }}
+                      className="font-bold inline-block animated-gradient-text"
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </motion.span>
+                  ))}
+                </span>
+              </h1>
+            </div>
 
             <motion.p {...fadeUp(2)} className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/45">
               Full Stack Developer
