@@ -5,6 +5,7 @@ import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Particles } from "@/components/particles"
+import { SectionReveal } from "@/components/section-reveal"
 
 export default function Home() {
   return (
@@ -17,10 +18,10 @@ export default function Home() {
       <Particles />
       <Header />
       <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <SectionReveal><About /></SectionReveal>
+      <SectionReveal><Projects /></SectionReveal>
+      <SectionReveal><Contact /></SectionReveal>
+      <SectionReveal><Footer /></SectionReveal>
     </main>
   )
 }
