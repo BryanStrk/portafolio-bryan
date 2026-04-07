@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, ArrowRight } from "lucide-react"
 import { useEffect, useState, useMemo } from "react"
+import { Aura } from "@/components/aura"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/BryanStrk", label: "GitHub" },
@@ -69,6 +70,8 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden px-4 pt-28 pb-16"
     >
+      <Aura />
+
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -99,16 +102,13 @@ export function Hero() {
               Disponible para proyectos
             </motion.div>
 
-            {/* Título con esquinas decorativas */}
             <div className="relative inline-block mb-6">
-              {/* Esquina superior izquierda */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={mounted ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: CORNER_DELAY, duration: 0.4, ease: easing }}
                 className="absolute -top-4 -left-4 w-6 h-6 border-t-2 border-l-2 border-primary/60 rounded-tl-sm"
               />
-              {/* Esquina inferior derecha */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={mounted ? { opacity: 1, scale: 1 } : {}}

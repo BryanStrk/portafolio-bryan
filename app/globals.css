@@ -201,6 +201,25 @@
     background-clip: text;
     animation: gradient-move 3s linear infinite;
   }
+
+  .aura-orb {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  filter: blur(60px);
+  animation: aura-pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite,
+              aura-glow 5s linear infinite;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3C/svg%3E");
+}
+
 }
 
 @keyframes float-slow {
@@ -222,4 +241,15 @@
   0%   { background-position: 0% center; }
   50%  { background-position: 100% center; }
   100% { background-position: 0% center; }
+}
+
+@keyframes aura-glow {
+  0%   { background-color: oklch(0.55 0.15 264 / 0.18); }
+  33%  { background-color: oklch(0.55 0.15 290 / 0.18); }
+  66%  { background-color: oklch(0.55 0.15 320 / 0.18); }
+  100% { background-color: oklch(0.55 0.15 264 / 0.18); }
+}
+
+@keyframes aura-pulse {
+  50% { transform: scale(3.5); }
 }

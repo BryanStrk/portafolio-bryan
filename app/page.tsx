@@ -5,7 +5,10 @@ import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Particles } from "@/components/particles"
+import { Noise } from "@/components/noise"
 import { SectionReveal } from "@/components/section-reveal"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { Cursor } from "@/components/cursor"
 
 export default function Home() {
   return (
@@ -15,6 +18,7 @@ export default function Home() {
         <div className="absolute left-[8%] top-[28rem] h-72 w-72 rounded-full bg-sky-400/8 blur-3xl" />
         <div className="absolute right-[6%] top-[52rem] h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
       </div>
+      <Cursor />
       <Particles />
       <Header />
       <Hero />
@@ -22,6 +26,8 @@ export default function Home() {
       <SectionReveal><Projects /></SectionReveal>
       <SectionReveal><Contact /></SectionReveal>
       <SectionReveal><Footer /></SectionReveal>
+      <ScrollToTop />
+      <Noise />
     </main>
   )
 }
