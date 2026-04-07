@@ -30,7 +30,7 @@ const contactLinks = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/bryan-paico",
-    href: "https://www.linkedin.com/in/bryan-alejandro-paico-albines-5560142b0/",
+    href: "https://www.linkedin.com/in/bryanpaicoalbines/",
     color: "#0077B5",
   },
   {
