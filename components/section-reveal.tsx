@@ -1,9 +1,19 @@
     "use client"
 
     import { motion } from "framer-motion"
-    import { ReactNode } from "react"
+    import { ReactNode, useEffect, useState } from "react"
 
     export function SectionReveal({ children }: { children: ReactNode }) {
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768)
+    }, [])
+
+    if (isMobile) {
+        return <>{children}</>
+    }
+
     return (
         <motion.div
         initial={{ opacity: 0, y: 40 }}

@@ -35,17 +35,23 @@ const CORNER_DELAY = 0.1 + (GREETING.length + NAME.length) * 0.06 + 0.3
 export function Hero() {
   const [visibleLines, setVisibleLines] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
-  const particles = useMemo(() =>
-    Array.from({ length: 22 }, (_, i) => ({
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
+
+  const particles = useMemo(() => {
+    const count = isMobile ? 8 : 22
+    return Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 2.5 + 1,
       duration: Math.random() * 3 + 2,
       delay: Math.random() * 2,
-    })), []
-  )
+    }))
+  }, [isMobile])
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 200)

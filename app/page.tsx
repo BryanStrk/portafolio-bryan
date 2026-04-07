@@ -5,7 +5,7 @@ import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Particles } from "@/components/particles"
-import { Noise } from "@/components/noise"
+
 import { SectionReveal } from "@/components/section-reveal"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
@@ -27,7 +27,7 @@ export default function Home() {
       <SectionReveal><Contact /></SectionReveal>
       <SectionReveal><Footer /></SectionReveal>
       <ScrollToTop />
-      <Noise />
+  
     </main>
   )
 }
