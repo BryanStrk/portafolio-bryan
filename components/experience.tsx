@@ -5,9 +5,8 @@ import { GraduationCap, Users, Code2, Briefcase } from "lucide-react"
 
 const experiences = [
   {
-    role: "Web Application Development (DAW)",
-    organization: "Higher Vocational Training",
-    period: "2022 – 2024",
+    role: "Desarrollo de Aplicaciones Web (DAW)",
+    organization: "Formación Profesional Superior",
     description:
       "Ciclo formativo de grado superior en Desarrollo de Aplicaciones Web. Base sólida en Java, MySQL y Angular a través de proyectos académicos reales.",
     icon: GraduationCap,
@@ -15,19 +14,17 @@ const experiences = [
     tags: ["Java", "MySQL", "Angular"],
   },
   {
-    role: "Backend Developer · Team Project",
+    role: "Desarrollador Backend · Proyecto en equipo",
     organization: "Smart Menu",
-    period: "2024",
     description:
       "Colaboré en equipo para desarrollar una plataforma de gestión de menús digitales. Responsable de endpoints REST y persistencia con Spring Boot.",
     icon: Users,
     color: "#3B82F6",
-    tags: ["Spring Boot", "REST", "Teamwork"],
+    tags: ["Spring Boot", "REST", "Trabajo en equipo"],
   },
   {
-    role: "Fullstack Developer · Personal Projects",
-    organization: "Self-driven",
-    period: "2023 – Presente",
+    role: "Desarrollador Fullstack · Proyectos personales",
+    organization: "Por mi cuenta",
     description:
       "Proyectos personales fullstack: library management, transport API, video club system y este portfolio. Foco en estructura limpia y producto que funciona.",
     icon: Code2,
@@ -35,14 +32,13 @@ const experiences = [
     tags: ["Next.js", "React", "Spring Boot"],
   },
   {
-    role: "Open to Opportunities",
-    organization: "Junior / Freelance",
-    period: "Disponible",
+    role: "Mentoría y apoyo técnico",
+    organization: "Prácticas · Factoría F5",
     description:
-      "Buscando un rol fullstack o backend donde seguir creciendo. Abierto a remoto y presencial en Barcelona, con disponibilidad inmediata.",
+      "Apoyo técnico y mentoría a +7 desarrolladores de un bootcamp full stack: resolución de incidencias, problemas reales de Git/GitHub y decisiones de arquitectura backend (DTOs, capas). En paralelo, desarrollo proyectos propios con Java 25 + Spring Boot 4.",
     icon: Briefcase,
     color: "#10B981",
-    tags: ["Hiring me", "Remote", "Barcelona"],
+    tags: ["Spring Boot", "Git/GitHub", "Mentoría"],
   },
 ]
 
@@ -56,7 +52,7 @@ export function Experience() {
               Trayectoria
             </p>
             <h2 className="mb-4 text-2xl font-semibold md:text-3xl">
-              My work experience
+              Mi experiencia
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground text-pretty">
               Una línea de tiempo honesta: formación, colaboración en equipo y proyectos personales
@@ -92,14 +88,9 @@ export function Experience() {
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <div className="mb-1 flex items-center justify-between gap-3">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                        {item.organization}
-                      </p>
-                      <span className="shrink-0 text-[11px] font-medium text-foreground/60">
-                        {item.period}
-                      </span>
-                    </div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      {item.organization}
+                    </p>
                     <h3 className="text-base font-semibold text-foreground/90 transition-colors group-hover:text-foreground md:text-lg">
                       {item.role}
                     </h3>

@@ -36,14 +36,15 @@ export function Contact() {
           {/* Encabezado con los textos y gradientes del vídeo */}
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl text-white">
-              Ready to take your{" "}
+              ¿
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#6366f1]">
-                digital presence
-              </span>{" "}
-              to the next level?
+                Hablamos
+              </span>
+              ?
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground text-sm md:text-base mt-4">
-              Don't settle for "good enough" - let's make it great!
+              Estoy abierto a nuevas oportunidades como desarrollador full stack. Si crees
+              que encajo en tu equipo, escríbeme.
             </p>
           </div>
 
@@ -57,12 +58,12 @@ export function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2 text-left">
-                <Label htmlFor="name" className="text-sm font-medium text-gray-300">Name</Label>
+                <Label htmlFor="name" className="text-sm font-medium text-gray-300">Nombre</Label>
                 <Input
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Your name..."
+                  placeholder="Tu nombre..."
                   value={formData.name}
                   onChange={handleChange}
                   className="bg-transparent border-white/10 text-white placeholder:text-gray-600 focus-visible:ring-purple-500/50 rounded-xl h-12"
@@ -71,12 +72,12 @@ export function Contact() {
               </div>
 
               <div className="space-y-2 text-left">
-                <Label htmlFor="email" className="text-sm font-medium text-gray-300">Email Address</Label>
+                <Label htmlFor="email" className="text-sm font-medium text-gray-300">Correo</Label>
                 <Input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="johndoe@gmail.com"
+                  placeholder="tu@correo.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="bg-transparent border-white/10 text-white placeholder:text-gray-600 focus-visible:ring-purple-500/50 rounded-xl h-12"
@@ -85,12 +86,12 @@ export function Contact() {
               </div>
 
               <div className="space-y-2 text-left">
-                <Label htmlFor="subject" className="text-sm font-medium text-gray-300">Subject</Label>
+                <Label htmlFor="subject" className="text-sm font-medium text-gray-300">Asunto</Label>
                 <Input
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder="Your subject matter..."
+                  placeholder="De qué quieres hablar..."
                   value={formData.subject}
                   onChange={handleChange}
                   className="bg-transparent border-white/10 text-white placeholder:text-gray-600 focus-visible:ring-purple-500/50 rounded-xl h-12"
@@ -99,11 +100,11 @@ export function Contact() {
               </div>
 
               <div className="space-y-2 text-left">
-                <Label htmlFor="message" className="text-sm font-medium text-gray-300">Message</Label>
+                <Label htmlFor="message" className="text-sm font-medium text-gray-300">Mensaje</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Your message..."
+                  placeholder="Tu mensaje..."
                   value={formData.message}
                   onChange={handleChange}
                   className="bg-transparent border-white/10 text-white placeholder:text-gray-600 focus-visible:ring-purple-500/50 rounded-xl min-h-[140px]"
@@ -116,7 +117,7 @@ export function Contact() {
                 variant="gradient"
                 className="w-full py-7 rounded-2xl font-semibold tracking-wide active:scale-[0.99]"
               >
-                Send Feedback
+                Enviar mensaje
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </form>

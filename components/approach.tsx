@@ -13,22 +13,22 @@ interface Phase {
 
 const phases: Phase[] = [
   {
-    label: "Phase 01",
-    title: "Discovery & Planning",
+    label: "Fase 01",
+    title: "Descubrimiento y planificación",
     description:
       "Entender el problema antes de escribir código. Definimos objetivo, alcance, stack y entregables para evitar reescrituras costosas más adelante.",
     icon: Compass,
   },
   {
-    label: "Phase 02",
-    title: "Design & Development",
+    label: "Fase 02",
+    title: "Diseño y desarrollo",
     description:
       "Construyo en iteraciones cortas: prototipo, feedback, refactor. Frontend limpio, backend estructurado y commits pequeños que son fáciles de revisar.",
     icon: Code2,
   },
   {
-    label: "Phase 03",
-    title: "Launch & Maintenance",
+    label: "Fase 03",
+    title: "Lanzamiento y mantenimiento",
     description:
       "Despliegue cuidado, monitorización básica y soporte post-lanzamiento. El proyecto no termina cuando sale a producción, ahí empieza la parte interesante.",
     icon: Rocket,
@@ -44,7 +44,7 @@ export function Approach() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary/80">
               Cómo trabajo
             </p>
-            <h2 className="mb-4 text-2xl font-semibold md:text-3xl">My approach</h2>
+            <h2 className="mb-4 text-2xl font-semibold md:text-3xl">Mi enfoque</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground text-pretty">
               Un proceso de tres fases que aplico tanto a proyectos personales como en equipo.
               Pasa el cursor o el foco sobre cada fase para ver el detalle.

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 const socialLinks = [
   { icon: Github, href: "https://github.com/BryanStrk", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/bryan-alejandro-paico-albines-5560142b0/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:bryanpaicoalbines97@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:bryanpaicoalbines97@gmail.com", label: "Correo" },
 ]
 
 const easing = [0.21, 1.02, 0.73, 1.0] as [number, number, number, number]
@@ -23,10 +23,10 @@ function fadeUp(delay: number) {
 }
 
 const codeLines = [
-  { label: "frontend", value: "'Angular'" },
-  { label: "backend", value: "'Java + Spring'" },
-  { label: "database", value: "'MySQL'" },
-  { label: "meta", value: "'Next.js'" },
+  { label: "frontend", value: "'Angular / React'" },
+  { label: "backend",  value: "'Java + Spring'" },
+  { label: "database", value: "'MySQL / MongoDB'" },
+  { label: "deploy",   value: "'Docker · IONOS'" },
 ]
 
 const GREETING = "Hola, Soy"
@@ -156,7 +156,7 @@ export function Hero() {
             </div>
 
             <motion.p {...fadeUp(2)} className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-foreground/45">
-              Full Stack Developer
+              Desarrollador Full Stack
             </motion.p>
 
             <motion.p {...fadeUp(3)} className="mb-10 max-w-lg text-base leading-relaxed text-muted-foreground">
@@ -199,7 +199,7 @@ export function Hero() {
               <div className="h-4 w-px bg-white/10" />
 
               <div className="flex flex-wrap gap-2">
-                {["Angular", "Java", "MySQL", "Next.js"].map((tag) => (
+                {["Angular", "React", "Java", "MySQL"].map((tag) => (
                   <span
                     key={tag}
                     className="rounded-md border border-white/8 bg-white/[0.03] px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary/20 hover:text-foreground/70"
