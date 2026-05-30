@@ -4,12 +4,9 @@ import { Github, ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-type Status = "In Dev" | "In Prod" | "Beta"
+import { ImageCarousel } from "@/components/image-carousel"
 
-type TerminalLine =
-  | { kind: "prompt"; text: string }
-  | { kind: "output"; text: string }
-  | { kind: "comment"; text: string }
+type Status = "En desarrollo" | "En producción" | "Beta"
 
 export type ProjectMockup =
   | {
@@ -19,14 +16,9 @@ export type ProjectMockup =
       alt: string
     }
   | {
-      kind: "terminal"
-      title: string
-      lines: TerminalLine[]
-    }
-  | {
-      kind: "code"
-      filename: string
-      lines: string[]
+      kind: "carousel"
+      images: readonly string[]
+      urlLabel: string
     }
 
 export interface ProjectCardData {
@@ -35,6 +27,7 @@ export interface ProjectCardData {
   tags: string[]
   liveUrl?: string
   githubUrl?: string
+  githubLinks?: { label: string; url: string }[]
   status?: Status
   mockup: ProjectMockup
 }
@@ -44,9 +37,9 @@ interface ProjectCardProps extends ProjectCardData {
 }
 
 const statusConfig = {
-  "In Dev":  { bg: "bg-yellow-500", text: "text-yellow-400" },
-  "In Prod": { bg: "bg-emerald-500", text: "text-emerald-400" },
-  "Beta":    { bg: "bg-sky-500", text: "text-sky-400" },
+  "En desarrollo": { bg: "bg-yellow-500", text: "text-yellow-400" },
+  "En producción": { bg: "bg-emerald-500", text: "text-emerald-400" },
+  "Beta":          { bg: "bg-sky-500", text: "text-sky-400" },
 }
 
 async function getRepoStars(repoUrl: string): Promise<number | null> {
@@ -70,16 +63,18 @@ export function ProjectCard({
   tags,
   liveUrl,
   githubUrl,
-  status = "In Prod",
+  githubLinks,
+  status = "En producción",
   mockup,
 }: ProjectCardProps) {
   const s = statusConfig[status]
   const [stars, setStars] = useState<number | null>(null)
+  const primaryGithub = githubUrl ?? githubLinks?.[0]?.url
 
   useEffect(() => {
-    if (!githubUrl) return
-    getRepoStars(githubUrl).then(setStars)
-  }, [githubUrl])
+    if (!primaryGithub) return
+    getRepoStars(primaryGithub).then(setStars)
+  }, [primaryGithub])
 
   return (
     <article className="card-aura group relative flex flex-col overflow-hidden rounded-xl border border-white/8 bg-card/70 transition-all duration-300 hover:border-primary/30 motion-safe:hover:-translate-y-1">
@@ -111,9 +106,9 @@ export function ProjectCard({
               )}
             </div>
           </div>
-          {githubUrl && (
+          {primaryGithub && (
             <a
-              href={githubUrl}
+              href={primaryGithub}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-0.5 shrink-0 text-muted-foreground/40 transition-colors hover:text-primary"
@@ -139,7 +134,7 @@ export function ProjectCard({
           ))}
         </div>
 
-        {(githubUrl || liveUrl) && (
+        {(githubUrl || liveUrl || (githubLinks && githubLinks.length > 0)) && (
           <div className="flex flex-wrap gap-2 pt-2">
             {liveUrl && (
               <a
@@ -163,6 +158,18 @@ export function ProjectCard({
                 Código
               </a>
             )}
+            {githubLinks?.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-white/12 bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+              >
+                <Github size={14} />
+                {link.label}
+              </a>
+            ))}
           </div>
         )}
       </div>
@@ -184,8 +191,7 @@ function ProjectMockupView({
       <MockupChrome mockup={mockup} liveUrl={liveUrl} />
       <div className="relative aspect-video overflow-hidden">
         {mockup.kind === "browser" && <BrowserBody mockup={mockup} title={title} />}
-        {mockup.kind === "terminal" && <TerminalBody mockup={mockup} />}
-        {mockup.kind === "code" && <CodeBody mockup={mockup} />}
+        {mockup.kind === "carousel" && <CarouselBody mockup={mockup} title={title} />}
       </div>
     </div>
   )
@@ -198,12 +204,7 @@ function MockupChrome({
   mockup: ProjectMockup
   liveUrl?: string
 }) {
-  const label =
-    mockup.kind === "browser"
-      ? hostnameFromUrl(liveUrl) ?? mockup.urlLabel
-      : mockup.kind === "terminal"
-        ? mockup.title
-        : mockup.filename
+  const label = hostnameFromUrl(liveUrl) ?? mockup.urlLabel
 
   return (
     <div className="flex items-center gap-2 border-b border-white/8 bg-card/60 px-3 py-2">
@@ -212,18 +213,10 @@ function MockupChrome({
         <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
       </div>
-      <div
-        className={
-          mockup.kind === "browser"
-            ? "ml-1 flex-1 truncate rounded-md border border-white/8 bg-background/60 px-2.5 py-1 text-center font-mono text-[10px] text-muted-foreground/80"
-            : "ml-1 flex-1 truncate text-center font-mono text-[10px] text-muted-foreground/70"
-        }
-      >
-        {mockup.kind === "browser" && (
-          <span className="mr-1 text-emerald-400/70" aria-hidden="true">
-            ●
-          </span>
-        )}
+      <div className="ml-1 flex-1 truncate rounded-md border border-white/8 bg-background/60 px-2.5 py-1 text-center font-mono text-[10px] text-muted-foreground/80">
+        <span className="mr-1 text-emerald-400/70" aria-hidden="true">
+          ●
+        </span>
         {label}
       </div>
     </div>
@@ -252,54 +245,21 @@ function BrowserBody({
   return <MockupSkeleton label="// TODO: src" />
 }
 
-function TerminalBody({
-  mockup,
-}: {
-  mockup: Extract<ProjectMockup, { kind: "terminal" }>
-}) {
-  return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0a0a12]/95 p-3 font-mono text-[10.5px] leading-relaxed">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgb(99_120_210/0.08),transparent_55%)]" />
-      <pre className="relative whitespace-pre">
-        {mockup.lines.map((line, i) => (
-          <div
-            key={i}
-            className={
-              line.kind === "prompt"
-                ? "text-emerald-300/90"
-                : line.kind === "comment"
-                  ? "text-muted-foreground/60"
-                  : "text-foreground/80"
-            }
-          >
-            {line.kind === "prompt" && <span className="text-primary/70">$ </span>}
-            {line.text}
-          </div>
-        ))}
-      </pre>
-    </div>
-  )
-}
 
-function CodeBody({
+function CarouselBody({
   mockup,
+  title,
 }: {
-  mockup: Extract<ProjectMockup, { kind: "code" }>
+  mockup: Extract<ProjectMockup, { kind: "carousel" }>
+  title: string
 }) {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0a0a12]/95 font-mono text-[10.5px] leading-relaxed">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgb(140_100_230/0.10),transparent_55%)]" />
-      <pre className="relative grid grid-cols-[2.25rem_1fr]">
-        {mockup.lines.map((line, i) => (
-          <div key={i} className="contents">
-            <span className="border-r border-white/5 pr-2 text-right text-muted-foreground/40 select-none">
-              {i + 1}
-            </span>
-            <span className="pl-3 text-foreground/85">{line || " "}</span>
-          </div>
-        ))}
-      </pre>
-    </div>
+    <ImageCarousel
+      images={mockup.images}
+      name={title}
+      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+      priorityFirst={false}
+    />
   )
 }
 

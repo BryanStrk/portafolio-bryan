@@ -1,117 +1,106 @@
 import { ProjectCard, type ProjectCardData } from "@/components/project-card"
+import { IMAGES } from "@/lib/images"
 
 const projects: ProjectCardData[] = [
   {
-    title: "Library Management System",
+    title: "Drive Arena",
+    description:
+      "Plataforma de gestión para un resort experiencial de motorsport. Frontend en React + Vite y backend en Spring Boot con MySQL: CRUDs, sistema de gamificación y reservas.",
+    tags: ["React", "Vite", "Spring Boot", "MySQL"],
+    liveUrl: "",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/drive-arena-frontend" },
+      { label: "Backend", url: "https://github.com/BryanStrk/drive-arena-backend" },
+    ],
+    status: "En desarrollo",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.driveArena,
+      urlLabel: "drive-arena.app",
+    },
+  },
+  {
+    title: "EventoPass",
+    description:
+      "Plataforma de reserva de eventos (conciertos, festivales, deportes). Frontend en Angular y backend en Spring Boot, desplegada en producción.",
+    tags: ["Angular", "Spring Boot", "Full Stack"],
+    liveUrl: "https://www.appdeploytest.com/",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/frontend-angular-reto" },
+      { label: "Backend", url: "https://github.com/nelson2411/backend-java-springboot-reto" },
+    ],
+    status: "En producción",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.eventoPass,
+      urlLabel: "appdeploytest.com",
+    },
+  },
+  {
+    title: "Smart Menu",
+    description:
+      "Sistema de menú digital para restaurantes con motor de recomendación nutricional (fórmula Mifflin-St Jeor). Angular + Spring Boot + MongoDB, con autenticación JWT por roles y CRUDs completos. Proyecto en equipo (DAW).",
+    tags: ["Angular", "Spring Boot", "MongoDB", "JWT"],
+    liveUrl: "",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/smart-menu-front" },
+      { label: "Backend", url: "https://github.com/BryanStrk/smart-menu-back" },
+    ],
+    status: "En desarrollo",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.smartMenu,
+      urlLabel: "smart-menu.app",
+    },
+  },
+  {
+    title: "API Playground",
+    description:
+      "Dashboard que agrega 20 APIs públicas y monitoriza su estado en vivo. Backend en Spring Boot 4 sobre Java 25 (virtual threads para pings concurrentes) y frontend en Angular 21 (zoneless + signals). Enfocado en accesibilidad.",
+    tags: ["Angular", "Spring Boot", "Java 25", "Virtual Threads"],
+    liveUrl: "https://api-playground-dashboard.vercel.app/",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/api-playground-dashboard" },
+      { label: "Backend", url: "https://github.com/BryanStrk/api-playground-backned" },
+    ],
+    status: "En producción",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.apiPlayground,
+      urlLabel: "api-playground-dashboard.vercel.app",
+    },
+  },
+  {
+    title: "Apex Fitness",
+    description:
+      "Sistema de gestión para gimnasios: actividades, instructores y miembros, con reglas de negocio reales (control de cupos, inscripciones, límite de actividades futuras). Backend en Spring Boot 4 sobre Java 25 + MySQL, con imágenes en Cloudinary.",
+    tags: ["Spring Boot", "Java 25", "MySQL", "JPA"],
+    liveUrl: "",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/apex-fitness-app" },
+      { label: "Backend", url: "https://github.com/BryanStrk/apex-fitness-backend" },
+    ],
+    status: "En desarrollo",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.apexFitness,
+      urlLabel: "apex-fitness.app",
+    },
+  },
+  {
+    title: "Sistema de gestión de biblioteca",
     description:
       "Sistema full stack de gestión de biblioteca con frontend y backend separados. Incluye gestión de usuarios, préstamos y lógica de negocio conectada a base de datos.",
     tags: ["Java", "MySQL", "Angular", "Full Stack"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/biblioteca-backend.git",
-    status: "In Prod",
+    status: "En producción",
     mockup: {
       kind: "browser",
       // TODO: src — añadir public/projects/library-management.png
       image: null,
       urlLabel: "library-management.local",
       alt: "Captura del sistema de gestión de biblioteca",
-    },
-  },
-  {
-    title: "Smart Menu (Team Project)",
-    description:
-      "Aplicación full stack desarrollada en equipo para la gestión de menús digitales. Participé en el desarrollo del backend, creación de endpoints REST y conexión con la base de datos.",
-    tags: ["Java", "Spring Boot", "Full Stack", "Team Project"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/smart-menu-back.git",
-    status: "In Prod",
-    mockup: {
-      kind: "browser",
-      // TODO: src — añadir public/projects/smart-menu.png
-      image: null,
-      urlLabel: "smart-menu.app",
-      alt: "Captura de Smart Menu",
-    },
-  },
-  {
-    title: "Transport API",
-    description:
-      "API REST desarrollada con Spring Boot y MongoDB para la gestión de transporte de mercancías, enfocada en estructura backend y diseño de endpoints.",
-    tags: ["Spring Boot", "MongoDB", "API REST", "Java"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/api-transporte-mercancias-springboot-mongodb.git",
-    status: "In Prod",
-    mockup: {
-      kind: "terminal",
-      title: "~/transport-api ▸ zsh",
-      lines: [
-        { kind: "prompt", text: 'curl -s http://localhost:8080/api/envios/SEV-203' },
-        { kind: "output", text: '{' },
-        { kind: "output", text: '  "id": "SEV-203",' },
-        { kind: "output", text: '  "origen": "Sevilla",' },
-        { kind: "output", text: '  "destino": "Madrid",' },
-        { kind: "output", text: '  "estado": "EN_RUTA",' },
-        { kind: "output", text: '  "peso_kg": 1240' },
-        { kind: "output", text: '}' },
-      ],
-    },
-  },
-  {
-    title: "Video Club System",
-    description:
-      "Sistema de gestión de videoclub desarrollado en Java con arquitectura MVC y persistencia en MySQL, orientado a la organización del código y lógica de negocio.",
-    tags: ["Java", "MVC", "MySQL", "Backend"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/video_club_app_backend.git",
-    status: "In Prod",
-    mockup: {
-      kind: "browser",
-      // TODO: src — añadir public/projects/video-club.png
-      image: null,
-      urlLabel: "video-club.local",
-      alt: "Captura del sistema de Video Club",
-    },
-  },
-  {
-    title: "Java VideoClub App",
-    description:
-      "Aplicación desarrollada en Java puro centrada en la lógica de negocio, estructuras de datos y organización modular del proyecto.",
-    tags: ["Java", "Backend", "Logic", "OOP"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/videoClub_app_Java_puro.git",
-    status: "In Prod",
-    mockup: {
-      kind: "code",
-      filename: "AlquilerService.java",
-      lines: [
-        "public class AlquilerService {",
-        "    private final ClienteRepo clientes;",
-        "    private final PeliculaRepo peliculas;",
-        "",
-        "    public Alquiler alquilar(Long clienteId,",
-        "                             Long peliculaId) {",
-        "        var cliente = clientes.find(clienteId);",
-        "        var peli = peliculas.find(peliculaId);",
-        "        return new Alquiler(cliente, peli);",
-        "    }",
-        "}",
-      ],
-    },
-  },
-  {
-    title: "Portfolio Web",
-    description:
-      "Portfolio personal desarrollado con Next.js y Tailwind CSS, con diseño moderno, secciones dinámicas y despliegue en Vercel.",
-    tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/portafolio-bryan.git",
-    status: "In Dev",
-    mockup: {
-      kind: "browser",
-      // TODO: src — añadir public/projects/portfolio.png
-      image: null,
-      urlLabel: "bryanpaico.dev",
-      alt: "Captura del portfolio personal",
     },
   },
 ]
