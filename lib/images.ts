@@ -1,0 +1,45 @@
+export const IMAGES = {
+  photo:
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150605/bryan-about_exdhzg.jpg",
+  cv: "https://res.cloudinary.com/dutmn3xde/image/upload/fl_attachment:cv-bryan-paico/cv-bryan-paico_xy0vpr.pdf",
+  driveArena: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150606/featured_ez8iod.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150740/Captura_de_pantalla_2026-05-30_a_las_16.18.56_xhv8yt.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150730/Captura_de_pantalla_2026-05-30_a_las_16.18.39_aiq9n8.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150715/Captura_de_pantalla_2026-05-30_a_las_16.18.24_ewju4h.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150689/Captura_de_pantalla_2026-05-30_a_las_16.18.02_voraln.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780150661/Captura_de_pantalla_2026-05-30_a_las_16.17.34_saajat.png",
+  ],
+  eventoPass: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166289/Captura_de_pantalla_2026-05-30_a_las_20.38.02_kco2tv.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166319/Captura_de_pantalla_2026-05-30_a_las_20.38.20_buki8z.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166321/Captura_de_pantalla_2026-05-30_a_las_20.38.36_dwnlap.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166351/Captura_de_pantalla_2026-05-30_a_las_20.38.57_tujddx.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166355/Captura_de_pantalla_2026-05-30_a_las_20.39.10_vfmnlq.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780166386/Captura_de_pantalla_2026-05-30_a_las_20.39.39_aotn4i.png",
+  ],
+  smartMenu: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168230/Captura_de_pantalla_2026-05-30_a_las_21.08.19_e3bujf.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168234/Captura_de_pantalla_2026-05-30_a_las_21.10.28_wmyynb.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168253/Captura_de_pantalla_2026-05-30_a_las_21.10.47_vpz5mu.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168293/Captura_de_pantalla_2026-05-30_a_las_21.11.15_kp4ilc.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168312/Captura_de_pantalla_2026-05-30_a_las_21.11.30_dujlyg.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168331/Captura_de_pantalla_2026-05-30_a_las_21.11.50_luiqiy.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168349/Captura_de_pantalla_2026-05-30_a_las_21.12.09_wvmfhh.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168363/Captura_de_pantalla_2026-05-30_a_las_21.12.27_j2eghr.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168435/Captura_de_pantalla_2026-05-30_a_las_21.13.21_dfzaqf.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780168366/Captura_de_pantalla_2026-05-30_a_las_21.12.40_io1wvp.png",
+  ],
+  apiPlayground: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170111/Captura_de_pantalla_2026-05-30_a_las_21.41.41_z64xdn.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170180/Captura_de_pantalla_2026-05-30_a_las_21.42.46_zik24y.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170194/Captura_de_pantalla_2026-05-30_a_las_21.42.58_wdsm7s.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170238/Captura_de_pantalla_2026-05-30_a_las_21.43.12_jruokg.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170294/Captura_de_pantalla_2026-05-30_a_las_21.43.52_hvkayy.png",
+  ],
+  apexFitness: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780171634/Captura_de_pantalla_2026-05-30_a_las_22.06.46_tu8vvh.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780171592/Captura_de_pantalla_2026-05-30_a_las_22.06.25_b9h1d0.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780171589/Captura_de_pantalla_2026-05-30_a_las_22.06.05_kioteh.png",
+  ],
+} as const
