@@ -20,7 +20,7 @@ const buttonVariants = cva(
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
         gradient:
-          'text-white border-0 shadow-lg shadow-purple-900/20 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-[length:200%_100%] motion-safe:[animation:gradient-move_6s_linear_infinite] motion-safe:hover:[animation-duration:4s] hover:brightness-110 focus-visible:ring-primary/50',
+          "relative isolate overflow-hidden text-white border-0 shadow-lg shadow-purple-900/20 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-[length:200%_100%] motion-safe:[animation:gradient-move_6s_linear_infinite] motion-safe:hover:[animation-duration:4s] hover:brightness-110 focus-visible:ring-primary/50 before:content-[''] before:pointer-events-none before:absolute before:inset-y-0 before:-left-1/2 before:h-full before:w-1/2 before:-skew-x-12 before:bg-gradient-to-r before:from-transparent before:via-white/45 before:to-transparent before:-z-10 motion-safe:before:animate-[shimmer_3s_linear_infinite]",
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
