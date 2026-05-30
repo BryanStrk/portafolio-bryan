@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, ArrowRight } from "lucide-react"
-import { useEffect, useState, useMemo } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { Aura } from "@/components/aura"
+import { Button } from "@/components/ui/button"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/BryanStrk", label: "GitHub" },
@@ -32,28 +33,54 @@ const GREETING = "Hola, Soy"
 const NAME = "Bryan Paico"
 const CORNER_DELAY = 0.1 + (GREETING.length + NAME.length) * 0.06 + 0.3
 
+function AnimatedLine({
+  text,
+  baseDelay,
+  letterClassName,
+  mounted,
+}: {
+  text: string
+  baseDelay: number
+  letterClassName: string
+  mounted: boolean
+}) {
+  const words = text.split(" ")
+  let charIndex = 0
+  return (
+    <>
+      {words.map((word, wIdx) => {
+        if (wIdx > 0) charIndex += 1
+        const wordStart = charIndex
+        charIndex += word.length
+        return (
+          <Fragment key={wIdx}>
+            {wIdx > 0 && " "}
+            <span className="inline-block whitespace-nowrap">
+              {word.split("").map((letter, lIdx) => {
+                const i = wordStart + lIdx
+                return (
+                  <motion.span
+                    key={lIdx}
+                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                    animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                    transition={{ delay: baseDelay + i * 0.06, duration: 0.5, ease: easing }}
+                    className={`inline-block ${letterClassName}`}
+                  >
+                    {letter}
+                  </motion.span>
+                )
+              })}
+            </span>
+          </Fragment>
+        )
+      })}
+    </>
+  )
+}
+
 export function Hero() {
   const [visibleLines, setVisibleLines] = useState(0)
   const [mounted, setMounted] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
-    const isMobileWidth = window.innerWidth < 768
-    setIsMobile(isIOS || isMobileWidth)
-  }, [])
-
-  const particles = useMemo(() => {
-    const count = isMobile ? 8 : 22
-    return Array.from({ length: count }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2.5 + 1,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
-    }))
-  }, [isMobile])
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 200)
@@ -82,22 +109,6 @@ export function Hero() {
 
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className="absolute rounded-full bg-primary/40"
-            style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
-            animate={{ y: [0, -30, 0], opacity: [0.2, 0.7, 0.2] }}
-            transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
-          />
-        ))}
-      </div>
-
-      <div className="animate-glow-pulse pointer-events-none absolute top-20 left-1/4 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-24 right-8 h-64 w-64 rounded-full bg-primary/8 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/2 right-1/3 h-48 w-48 rounded-full bg-accent/[0.07] blur-2xl" />
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_360px]">
 
@@ -124,35 +135,22 @@ export function Hero() {
                 className="absolute -bottom-4 -right-4 w-6 h-6 border-b-2 border-r-2 border-primary/60 rounded-br-sm"
               />
 
-              <h1 className="max-w-2xl text-6xl leading-[1.1] tracking-tight md:text-7xl lg:text-[5.5rem]">
-                <span className="inline-flex flex-wrap">
-                  {GREETING.split("").map((letter, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                      animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-                      transition={{ delay: 0.1 + i * 0.06, duration: 0.5, ease: easing }}
-                      className="font-bold text-foreground inline-block"
-                    >
-                      {letter === " " ? "\u00A0" : letter}
-                    </motion.span>
-                  ))}
+              <h1 className="max-w-2xl text-[clamp(2.25rem,9vw,5.5rem)] leading-[1.1] tracking-tight">
+                <span className="block">
+                  <AnimatedLine
+                    text={GREETING}
+                    baseDelay={0.1}
+                    letterClassName="font-bold text-foreground"
+                    mounted={mounted}
+                  />
                 </span>
-
-                <br />
-
-                <span className="inline-flex flex-wrap">
-                  {NAME.split("").map((letter, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                      animate={mounted ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-                      transition={{ delay: 0.1 + (GREETING.length * 0.06) + i * 0.06, duration: 0.5, ease: easing }}
-                      className="font-bold inline-block animated-gradient-text"
-                    >
-                      {letter === " " ? "\u00A0" : letter}
-                    </motion.span>
-                  ))}
+                <span className="block">
+                  <AnimatedLine
+                    text={NAME}
+                    baseDelay={0.1 + GREETING.length * 0.06}
+                    letterClassName="font-bold animated-gradient-text"
+                    mounted={mounted}
+                  />
                 </span>
               </h1>
             </div>
@@ -168,13 +166,12 @@ export function Hero() {
             </motion.p>
 
             <motion.div {...fadeUp(4)} className="mb-10 flex flex-wrap gap-3">
-              <a
-                href="#projects"
-                className="group inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.35)] transition-all duration-200 hover:bg-primary/88 hover:gap-3 hover:shadow-[0_0_32px_hsl(var(--primary)/0.5)]"
-              >
-                Ver proyectos
-                <ArrowRight className="h-3.5 w-3.5" />
-              </a>
+              <Button asChild variant="gradient" size="lg" className="group gap-2 px-5">
+                <a href="#projects">
+                  Ver proyectos
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </a>
+              </Button>
               <a
                 href="#about"
                 className="inline-flex items-center rounded-md border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-foreground/75 transition-all duration-200 hover:border-primary/30 hover:text-foreground"
