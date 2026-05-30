@@ -100,20 +100,6 @@
     background-attachment: fixed;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(to right, rgb(255 255 255 / 0.025) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.025) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(to bottom, transparent, black 12%, black 80%, transparent);
-    opacity: 0.35;
-    z-index: -2;
-  }
-
   body::after {
     content: '';
     position: fixed;
@@ -253,4 +239,150 @@
 
 @keyframes aura-pulse {
   50% { transform: scale(3.5); }
+}
+
+@keyframes shimmer {
+  0%   { left: -50%; }
+  100% { left: 150%; }
+}
+
+/* === GridBackground (Feature 1) === */
+.grid-bg {
+  --mx: 50%;
+  --my: 30%;
+  --grid-size: 64px;
+  --grid-color: rgb(255 255 255 / 0.055);
+  --grid-color-strong: rgb(132 148 230 / 0.22);
+  --spotlight-size: 460px;
+  isolation: isolate;
+}
+
+.grid-bg-base {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: linear-gradient(to bottom, transparent, black 8%, black 78%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 8%, black 78%, transparent);
+  opacity: 0.6;
+  transition: opacity 600ms ease;
+}
+
+.grid-bg-spotlight {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-color-strong) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color-strong) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: radial-gradient(circle var(--spotlight-size) at var(--mx) var(--my), black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle var(--spotlight-size) at var(--mx) var(--my), black 0%, transparent 70%);
+  opacity: 0.85;
+  transition: opacity 600ms ease;
+}
+
+.grid-bg[data-hero-visible="false"] .grid-bg-base { opacity: 0.22; }
+.grid-bg[data-hero-visible="false"] .grid-bg-spotlight { opacity: 0.3; }
+
+.grid-bg-blob {
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+  transition: opacity 600ms ease;
+}
+
+.grid-bg[data-hero-visible="false"] .grid-bg-blob { opacity: 0.28; }
+
+.grid-bg-blob--purple {
+  top: -6rem;
+  left: -4rem;
+  background: radial-gradient(circle, oklch(0.55 0.18 290 / 0.55), transparent 65%);
+  animation: blob-float-a 14s ease-in-out infinite;
+}
+
+.grid-bg-blob--blue {
+  top: -4rem;
+  right: -6rem;
+  background: radial-gradient(circle, oklch(0.55 0.16 248 / 0.55), transparent 65%);
+  animation: blob-float-b 18s ease-in-out infinite;
+}
+
+@keyframes blob-float-a {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(22px, 28px, 0); }
+}
+
+@keyframes blob-float-b {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(-26px, 22px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-bg-blob { animation: none; }
+  .grid-bg-spotlight {
+    mask-image: radial-gradient(circle 360px at 50% 25%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle 360px at 50% 25%, black 0%, transparent 70%);
+  }
+}
+
+@media (pointer: coarse) {
+  .grid-bg-spotlight {
+    mask-image: radial-gradient(circle 360px at 50% 25%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle 360px at 50% 25%, black 0%, transparent 70%);
+  }
+}
+
+/* === TechMarquee (Feature 3) === */
+.tech-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+}
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.5rem;
+  animation: tech-marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.tech-marquee-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tech-marquee:hover .tech-marquee-track,
+.tech-marquee-stack:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes tech-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .tech-marquee-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .tech-marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
 }
