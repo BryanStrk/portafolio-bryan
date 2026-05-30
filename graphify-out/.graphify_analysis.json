@@ -53,100 +53,52 @@
       "portafolio_bryan_package_dependencies_zod"
     ],
     "1": [
-      "app_page",
-      "app_page_home",
-      "app_page_tsx",
-      "components_about",
-      "components_about_about",
-      "components_about_skills",
-      "components_about_stats",
-      "components_about_tsx",
-      "components_aura_aura",
-      "components_aura_tsx",
-      "components_contact",
       "components_contact_contact",
-      "components_contact_contactlinks",
       "components_contact_tsx",
-      "components_contact_whatsappicon",
-      "components_footer",
-      "components_footer_hovercolors",
-      "components_footer_sociallinks",
-      "components_footer_tsx",
-      "components_footer_whatsappicon",
-      "components_header",
-      "components_header_navitems",
-      "components_header_tsx",
-      "components_hero",
-      "components_hero_codelines",
-      "components_hero_easing",
-      "components_hero_fadeup",
-      "components_hero_hero",
-      "components_hero_sociallinks",
-      "components_hero_tsx",
-      "components_particles_particle",
-      "components_particles_tsx",
-      "components_project_card",
-      "components_project_card_getrepostars",
-      "components_project_card_statusconfig",
-      "components_projects",
-      "components_projects_projects",
-      "components_projects_tsx",
-      "components_scroll_to_top",
-      "components_section_reveal",
-      "components_section_reveal_tsx",
-      "lib_github",
-      "public_bryan_about",
-      "public_cv_bryan_paico",
-      "tech_framer_motion"
+      "components_ui_button_tsx",
+      "components_ui_calendar_tsx",
+      "components_ui_textarea_tsx",
+      "ui_alert_dialog_alertdialog",
+      "ui_alert_dialog_alertdialogcancel",
+      "ui_alert_dialog_alertdialogcontent",
+      "ui_alert_dialog_alertdialogdescription",
+      "ui_alert_dialog_alertdialogfooter",
+      "ui_alert_dialog_alertdialogoverlay",
+      "ui_alert_dialog_alertdialogportal",
+      "ui_alert_dialog_alertdialogtitle",
+      "ui_alert_dialog_alertdialogtrigger",
+      "ui_button_button",
+      "ui_button_buttonvariants",
+      "ui_calendar_calendar",
+      "ui_calendar_calendardaybutton",
+      "ui_carousel_carousel",
+      "ui_carousel_carouselapi",
+      "ui_carousel_carouselcontent",
+      "ui_carousel_carouselcontext",
+      "ui_carousel_carouselcontextprops",
+      "ui_carousel_carouselitem",
+      "ui_carousel_carouselnext",
+      "ui_carousel_carouseloptions",
+      "ui_carousel_carouselplugin",
+      "ui_carousel_carouselprevious",
+      "ui_carousel_carouselprops",
+      "ui_carousel_usecarousel",
+      "ui_carousel_usecarouselparameters",
+      "ui_input_group_inputgroup",
+      "ui_input_group_inputgroupaddon",
+      "ui_input_group_inputgroupaddonvariants",
+      "ui_input_group_inputgroupbutton",
+      "ui_input_group_inputgroupbuttonvariants",
+      "ui_input_group_inputgrouptext",
+      "ui_pagination_pagination",
+      "ui_pagination_paginationcontent",
+      "ui_pagination_paginationellipsis",
+      "ui_pagination_paginationitem",
+      "ui_pagination_paginationlinkprops",
+      "ui_pagination_paginationprevious",
+      "ui_textarea_textarea"
     ],
     "2": [
-      "components_ui_accordion_tsx",
-      "components_ui_badge_tsx",
-      "components_ui_popover_tsx",
-      "components_ui_progress_tsx",
-      "components_ui_radio_group_tsx",
-      "components_ui_slider_tsx",
-      "components_ui_spinner_tsx",
-      "components_ui_switch_tsx",
-      "components_ui_toggle_tsx",
-      "lib_utils_ts",
-      "ui_accordion_accordion",
-      "ui_accordion_accordioncontent",
-      "ui_accordion_accordionitem",
-      "ui_accordion_accordiontrigger",
-      "ui_badge_badge",
-      "ui_badge_badgevariants",
-      "ui_checkbox_checkbox",
-      "ui_dropdown_menu_dropdownmenu",
-      "ui_dropdown_menu_dropdownmenucheckboxitem",
-      "ui_dropdown_menu_dropdownmenucontent",
-      "ui_dropdown_menu_dropdownmenugroup",
-      "ui_dropdown_menu_dropdownmenuportal",
-      "ui_dropdown_menu_dropdownmenuradiogroup",
-      "ui_dropdown_menu_dropdownmenuradioitem",
-      "ui_dropdown_menu_dropdownmenuseparator",
-      "ui_dropdown_menu_dropdownmenushortcut",
-      "ui_dropdown_menu_dropdownmenusub",
-      "ui_dropdown_menu_dropdownmenusubcontent",
-      "ui_dropdown_menu_dropdownmenusubtrigger",
-      "ui_dropdown_menu_dropdownmenutrigger",
-      "ui_hover_card_hovercard",
-      "ui_hover_card_hovercardcontent",
-      "ui_hover_card_hovercardtrigger",
-      "ui_popover_popover",
-      "ui_popover_popoveranchor",
-      "ui_popover_popovercontent",
-      "ui_popover_popovertrigger",
-      "ui_progress_progress",
-      "ui_radio_group_radiogroup",
-      "ui_slider_slider",
-      "ui_spinner_spinner",
-      "ui_switch_switch",
-      "ui_toggle_group_togglegroup",
-      "ui_toggle_toggle",
-      "ui_toggle_togglevariants"
-    ],
-    "3": [
       "components_ui_toast_tsx",
       "components_ui_toaster_tsx",
       "hooks_use_toast_action",
@@ -188,7 +140,89 @@
       "ui_use_toast_toastertoast",
       "ui_use_toast_toasttimeouts"
     ],
+    "3": [
+      "components_ui_accordion_tsx",
+      "components_ui_badge_tsx",
+      "components_ui_input_otp_tsx",
+      "components_ui_popover_tsx",
+      "components_ui_progress_tsx",
+      "components_ui_radio_group_tsx",
+      "components_ui_scroll_area_tsx",
+      "components_ui_slider_tsx",
+      "components_ui_spinner_tsx",
+      "components_ui_switch_tsx",
+      "components_ui_toggle_tsx",
+      "lib_utils_ts",
+      "ui_accordion_accordion",
+      "ui_accordion_accordioncontent",
+      "ui_accordion_accordionitem",
+      "ui_accordion_accordiontrigger",
+      "ui_badge_badge",
+      "ui_badge_badgevariants",
+      "ui_checkbox_checkbox",
+      "ui_hover_card_hovercard",
+      "ui_hover_card_hovercardcontent",
+      "ui_hover_card_hovercardtrigger",
+      "ui_input_otp_inputotp",
+      "ui_input_otp_inputotpgroup",
+      "ui_input_otp_inputotpseparator",
+      "ui_input_otp_inputotpslot",
+      "ui_popover_popover",
+      "ui_popover_popoveranchor",
+      "ui_popover_popovercontent",
+      "ui_popover_popovertrigger",
+      "ui_progress_progress",
+      "ui_radio_group_radiogroup",
+      "ui_scroll_area_scrollarea",
+      "ui_scroll_area_scrollbar",
+      "ui_slider_slider",
+      "ui_spinner_spinner",
+      "ui_switch_switch",
+      "ui_toggle_group_togglegroup",
+      "ui_toggle_toggle",
+      "ui_toggle_togglevariants"
+    ],
     "4": [
+      "app_page_home",
+      "app_page_tsx",
+      "components_about_about",
+      "components_about_skills",
+      "components_about_stats",
+      "components_about_tsx",
+      "components_approach_approach",
+      "components_approach_phases",
+      "components_approach_tsx",
+      "components_aura_aura",
+      "components_aura_tsx",
+      "components_experience_tsx",
+      "components_footer",
+      "components_footer_hovercolors",
+      "components_footer_sociallinks",
+      "components_footer_tsx",
+      "components_footer_whatsappicon",
+      "components_grid_background_tsx",
+      "components_header_header",
+      "components_header_navitems",
+      "components_header_tsx",
+      "components_hero_codelines",
+      "components_hero_easing",
+      "components_hero_fadeup",
+      "components_hero_hero",
+      "components_hero_sociallinks",
+      "components_hero_tsx",
+      "components_particles_particle",
+      "components_particles_tsx",
+      "components_projects_projects",
+      "components_projects_tsx",
+      "components_scroll_to_top_tsx",
+      "components_section_reveal_sectionreveal",
+      "components_section_reveal_tsx",
+      "components_skills_bento_priorities",
+      "components_skills_bento_skillsbento",
+      "components_skills_bento_techstack",
+      "components_skills_bento_tsx"
+    ],
+    "5": [
       "components_ui_input_tsx",
       "components_ui_sidebar_tsx",
       "components_ui_tooltip_tsx",
@@ -228,17 +262,22 @@
       "ui_tooltip_tooltiptrigger",
       "ui_use_mobile_useismobile"
     ],
-    "5": [
+    "6": [
       "components_ui_avatar_tsx",
+      "components_ui_breadcrumb_tsx",
       "components_ui_card_tsx",
       "components_ui_kbd_tsx",
-      "components_ui_navigation_menu_tsx",
-      "components_ui_scroll_area_tsx",
+      "components_ui_resizable_tsx",
       "components_ui_table_tsx",
       "lib_utils_cn",
       "ui_avatar_avatar",
       "ui_avatar_avatarfallback",
       "ui_avatar_avatarimage",
+      "ui_breadcrumb_breadcrumb",
+      "ui_breadcrumb_breadcrumbellipsis",
+      "ui_breadcrumb_breadcrumbitem",
+      "ui_breadcrumb_breadcrumbpage",
+      "ui_breadcrumb_breadcrumbseparator",
       "ui_card_card",
       "ui_card_cardaction",
       "ui_card_cardcontent",
@@ -248,11 +287,8 @@
       "ui_card_cardtitle",
       "ui_kbd_kbd",
       "ui_kbd_kbdgroup",
-      "ui_navigation_menu_navigationmenucontent",
-      "ui_navigation_menu_navigationmenuindicator",
-      "ui_navigation_menu_navigationmenuviewport",
-      "ui_scroll_area_scrollarea",
-      "ui_scroll_area_scrollbar",
+      "ui_resizable_resizablehandle",
+      "ui_resizable_resizablepanel",
       "ui_table_table",
       "ui_table_tablebody",
       "ui_table_tablecaption",
@@ -261,37 +297,6 @@
       "ui_table_tablehead",
       "ui_table_tableheader",
       "ui_table_tablerow"
-    ],
-    "6": [
-      "components_ui_button_tsx",
-      "components_ui_calendar_tsx",
-      "components_ui_textarea_tsx",
-      "ui_alert_dialog_alertdialog",
-      "ui_alert_dialog_alertdialogcancel",
-      "ui_alert_dialog_alertdialogcontent",
-      "ui_alert_dialog_alertdialogdescription",
-      "ui_alert_dialog_alertdialogfooter",
-      "ui_alert_dialog_alertdialogoverlay",
-      "ui_alert_dialog_alertdialogportal",
-      "ui_alert_dialog_alertdialogtitle",
-      "ui_alert_dialog_alertdialogtrigger",
-      "ui_button_button",
-      "ui_button_buttonvariants",
-      "ui_calendar_calendar",
-      "ui_calendar_calendardaybutton",
-      "ui_input_group_inputgroup",
-      "ui_input_group_inputgroupaddon",
-      "ui_input_group_inputgroupaddonvariants",
-      "ui_input_group_inputgroupbutton",
-      "ui_input_group_inputgroupbuttonvariants",
-      "ui_input_group_inputgrouptext",
-      "ui_pagination_pagination",
-      "ui_pagination_paginationcontent",
-      "ui_pagination_paginationellipsis",
-      "ui_pagination_paginationitem",
-      "ui_pagination_paginationlinkprops",
-      "ui_pagination_paginationprevious",
-      "ui_textarea_textarea"
     ],
     "7": [
       "components_ui_field_tsx",
@@ -366,46 +371,6 @@
       "tsconfig_json"
     ],
     "10": [
-      "components_json",
-      "portafolio_bryan_components_aliases",
-      "portafolio_bryan_components_aliases_components",
-      "portafolio_bryan_components_aliases_hooks",
-      "portafolio_bryan_components_aliases_lib",
-      "portafolio_bryan_components_aliases_ui",
-      "portafolio_bryan_components_aliases_utils",
-      "portafolio_bryan_components_iconlibrary",
-      "portafolio_bryan_components_rsc",
-      "portafolio_bryan_components_schema",
-      "portafolio_bryan_components_style",
-      "portafolio_bryan_components_tailwind",
-      "portafolio_bryan_components_tailwind_basecolor",
-      "portafolio_bryan_components_tailwind_config",
-      "portafolio_bryan_components_tailwind_css",
-      "portafolio_bryan_components_tailwind_cssvariables",
-      "portafolio_bryan_components_tailwind_prefix",
-      "portafolio_bryan_components_tsx"
-    ],
-    "11": [
-      "package_json",
-      "portafolio_bryan_package_devdependencies",
-      "portafolio_bryan_package_devdependencies_postcss",
-      "portafolio_bryan_package_devdependencies_tailwindcss_postcss",
-      "portafolio_bryan_package_devdependencies_tw_animate_css",
-      "portafolio_bryan_package_devdependencies_types_node",
-      "portafolio_bryan_package_devdependencies_types_react",
-      "portafolio_bryan_package_devdependencies_typescript",
-      "portafolio_bryan_package_name",
-      "portafolio_bryan_package_private",
-      "portafolio_bryan_package_scripts",
-      "portafolio_bryan_package_scripts_build",
-      "portafolio_bryan_package_scripts_dev",
-      "portafolio_bryan_package_scripts_lint",
-      "portafolio_bryan_package_scripts_start",
-      "portafolio_bryan_package_version",
-      "readme_portfolio_bryan",
-      "tech_tailwind"
-    ],
-    "12": [
       "components_ui_item_tsx",
       "components_ui_separator_tsx",
       "ui_button_group_buttongroup",
@@ -425,7 +390,27 @@
       "ui_item_itemvariants",
       "ui_separator_separator"
     ],
-    "13": [
+    "11": [
+      "components_json",
+      "portafolio_bryan_components_aliases",
+      "portafolio_bryan_components_aliases_components",
+      "portafolio_bryan_components_aliases_hooks",
+      "portafolio_bryan_components_aliases_lib",
+      "portafolio_bryan_components_aliases_ui",
+      "portafolio_bryan_components_aliases_utils",
+      "portafolio_bryan_components_iconlibrary",
+      "portafolio_bryan_components_rsc",
+      "portafolio_bryan_components_schema",
+      "portafolio_bryan_components_style",
+      "portafolio_bryan_components_tailwind",
+      "portafolio_bryan_components_tailwind_basecolor",
+      "portafolio_bryan_components_tailwind_config",
+      "portafolio_bryan_components_tailwind_css",
+      "portafolio_bryan_components_tailwind_cssvariables",
+      "portafolio_bryan_components_tailwind_prefix",
+      "portafolio_bryan_components_tsx"
+    ],
+    "12": [
       "components_ui_menubar_tsx",
       "ui_menubar_menubar",
       "ui_menubar_menubarcheckboxitem",
@@ -444,33 +429,47 @@
       "ui_menubar_menubarsubtrigger",
       "ui_menubar_menubartrigger"
     ],
+    "13": [
+      "ui_dropdown_menu_dropdownmenu",
+      "ui_dropdown_menu_dropdownmenucheckboxitem",
+      "ui_dropdown_menu_dropdownmenucontent",
+      "ui_dropdown_menu_dropdownmenugroup",
+      "ui_dropdown_menu_dropdownmenuportal",
+      "ui_dropdown_menu_dropdownmenuradiogroup",
+      "ui_dropdown_menu_dropdownmenuradioitem",
+      "ui_dropdown_menu_dropdownmenuseparator",
+      "ui_dropdown_menu_dropdownmenushortcut",
+      "ui_dropdown_menu_dropdownmenusub",
+      "ui_dropdown_menu_dropdownmenusubcontent",
+      "ui_dropdown_menu_dropdownmenusubtrigger",
+      "ui_dropdown_menu_dropdownmenutrigger"
+    ],
     "14": [
-      "ui_carousel_carousel",
-      "ui_carousel_carouselapi",
-      "ui_carousel_carouselcontent",
-      "ui_carousel_carouselcontext",
-      "ui_carousel_carouselcontextprops",
-      "ui_carousel_carouselitem",
-      "ui_carousel_carouselnext",
-      "ui_carousel_carouseloptions",
-      "ui_carousel_carouselplugin",
-      "ui_carousel_carouselprevious",
-      "ui_carousel_carouselprops",
-      "ui_carousel_usecarousel",
-      "ui_carousel_usecarouselparameters"
+      "components_section_reveal",
+      "concept_framer_motion",
+      "concept_nextjs_15",
+      "concept_tailwind_css_v4",
+      "portafolio_bryan_package_devdependencies",
+      "portafolio_bryan_package_devdependencies_postcss",
+      "portafolio_bryan_package_devdependencies_tailwindcss_postcss",
+      "portafolio_bryan_package_devdependencies_tw_animate_css",
+      "portafolio_bryan_package_devdependencies_types_node",
+      "portafolio_bryan_package_devdependencies_types_react",
+      "portafolio_bryan_package_devdependencies_typescript",
+      "readme_portfolio"
     ],
     "15": [
-      "components_ui_drawer_tsx",
-      "ui_drawer_drawer",
-      "ui_drawer_drawerclose",
-      "ui_drawer_drawercontent",
-      "ui_drawer_drawerdescription",
-      "ui_drawer_drawerfooter",
-      "ui_drawer_drawerheader",
-      "ui_drawer_draweroverlay",
-      "ui_drawer_drawerportal",
-      "ui_drawer_drawertitle",
-      "ui_drawer_drawertrigger"
+      "app_page",
+      "components_about",
+      "components_contact",
+      "components_hero",
+      "components_project_card",
+      "components_project_card_getrepostars",
+      "components_project_card_statusconfig",
+      "components_projects",
+      "lib_github",
+      "public_bryan_about",
+      "public_cv_bryan_paico"
     ],
     "16": [
       "components_ui_select_tsx",
@@ -512,6 +511,19 @@
       "ui_chart_usechart"
     ],
     "19": [
+      "components_ui_drawer_tsx",
+      "ui_drawer_drawer",
+      "ui_drawer_drawerclose",
+      "ui_drawer_drawercontent",
+      "ui_drawer_drawerdescription",
+      "ui_drawer_drawerfooter",
+      "ui_drawer_drawerheader",
+      "ui_drawer_draweroverlay",
+      "ui_drawer_drawerportal",
+      "ui_drawer_drawertitle",
+      "ui_drawer_drawertrigger"
+    ],
+    "20": [
       "ui_context_menu_contextmenu",
       "ui_context_menu_contextmenucheckboxitem",
       "ui_context_menu_contextmenucontent",
@@ -523,7 +535,18 @@
       "ui_context_menu_contextmenusubcontent",
       "ui_context_menu_contextmenutrigger"
     ],
-    "20": [
+    "21": [
+      "package_json",
+      "portafolio_bryan_package_name",
+      "portafolio_bryan_package_private",
+      "portafolio_bryan_package_scripts",
+      "portafolio_bryan_package_scripts_build",
+      "portafolio_bryan_package_scripts_dev",
+      "portafolio_bryan_package_scripts_lint",
+      "portafolio_bryan_package_scripts_start",
+      "portafolio_bryan_package_version"
+    ],
+    "22": [
       "components_ui_empty_tsx",
       "ui_empty_empty",
       "ui_empty_emptycontent",
@@ -533,27 +556,12 @@
       "ui_empty_emptymediavariants",
       "ui_empty_emptytitle"
     ],
-    "21": [
-      "components_ui_breadcrumb_tsx",
-      "ui_breadcrumb_breadcrumb",
-      "ui_breadcrumb_breadcrumbellipsis",
-      "ui_breadcrumb_breadcrumbitem",
-      "ui_breadcrumb_breadcrumbpage",
-      "ui_breadcrumb_breadcrumbseparator"
-    ],
-    "22": [
+    "23": [
       "app_layout_jetbrainsmono",
       "app_layout_manrope",
       "app_layout_metadata",
       "app_layout_rootlayout",
       "app_layout_tsx"
-    ],
-    "23": [
-      "components_ui_input_otp_tsx",
-      "ui_input_otp_inputotp",
-      "ui_input_otp_inputotpgroup",
-      "ui_input_otp_inputotpseparator",
-      "ui_input_otp_inputotpslot"
     ],
     "24": [
       "components_ui_tabs_tsx",
@@ -576,33 +584,35 @@
       "ui_collapsible_collapsibletrigger"
     ],
     "27": [
-      "components_ui_resizable_tsx",
-      "ui_resizable_resizablehandle",
-      "ui_resizable_resizablepanel"
+      "components_ui_navigation_menu_tsx",
+      "ui_navigation_menu_navigationmenucontent",
+      "ui_navigation_menu_navigationmenuindicator",
+      "ui_navigation_menu_navigationmenuviewport"
     ],
     "28": [
+      "claude_settings_local_json",
+      "claude_settings_local_permissions",
+      "claude_settings_local_permissions_allow"
+    ],
+    "29": [
       "components_cursor_cursor",
       "components_cursor_tsx"
     ],
-    "29": [
+    "30": [
       "components_noise_noise",
       "components_noise_tsx"
     ],
-    "30": [
+    "31": [
+      "components_ui_sonner_tsx",
+      "ui_sonner_toaster"
+    ],
+    "32": [
       "lib_github_getrepostars",
       "lib_github_ts"
     ],
-    "31": [
+    "33": [
       "portafolio_bryan_postcss_config_config",
       "postcss_config_mjs"
-    ],
-    "32": [
-      "app_layout",
-      "tech_nextjs"
-    ],
-    "33": [
-      "components_ui_sonner_tsx",
-      "ui_sonner_toaster"
     ],
     "34": [
       "next_config_mjs"
@@ -617,42 +627,48 @@
       "ui_aspect_ratio_aspectratio"
     ],
     "38": [
-      "components_aura"
+      "app_layout"
     ],
     "39": [
+      "components_header"
+    ],
+    "40": [
+      "components_aura"
+    ],
+    "41": [
       "components_particles"
     ]
   },
   "cohesion": {
     "0": 0.04,
-    "1": 0.05454545454545454,
-    "2": 0.048484848484848485,
-    "3": 0.07179487179487179,
-    "4": 0.06827880512091039,
-    "5": 0.11290322580645161,
-    "6": 0.09852216748768473,
+    "1": 0.06659619450317125,
+    "2": 0.07179487179487179,
+    "3": 0.05512820512820513,
+    "4": 0.06685633001422475,
+    "5": 0.06827880512091039,
+    "6": 0.10695187165775401,
     "7": 0.10333333333333333,
     "8": 0.11904761904761904,
     "9": 0.1,
-    "10": 0.1111111111111111,
+    "10": 0.13725490196078433,
     "11": 0.1111111111111111,
-    "12": 0.13725490196078433,
-    "13": 0.11764705882352941,
-    "14": 0.20512820512820512,
+    "12": 0.11764705882352941,
+    "13": 0.15384615384615385,
+    "14": 0.16666666666666666,
     "15": 0.18181818181818182,
     "16": 0.18181818181818182,
     "17": 0.18181818181818182,
     "18": 0.21818181818181817,
-    "19": 0.2,
-    "20": 0.2857142857142857,
-    "21": 0.3333333333333333,
-    "22": 0.4,
+    "19": 0.18181818181818182,
+    "20": 0.2,
+    "21": 0.2222222222222222,
+    "22": 0.2857142857142857,
     "23": 0.4,
     "24": 0.4,
     "25": 0.5,
     "26": 0.5,
-    "27": 0.6666666666666666,
-    "28": 1.0,
+    "27": 0.5,
+    "28": 0.6666666666666666,
     "29": 1.0,
     "30": 1.0,
     "31": 1.0,
@@ -663,7 +679,9 @@
     "36": 1.0,
     "37": 1.0,
     "38": 1.0,
-    "39": 1.0
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0
   },
   "gods": [
     {
@@ -697,6 +715,11 @@
       "degree": 12
     },
     {
+      "id": "ui_button_button",
+      "label": "Button()",
+      "degree": 11
+    },
+    {
       "id": "ui_context_menu_contextmenu",
       "label": "ContextMenu()",
       "degree": 11
@@ -707,17 +730,23 @@
       "degree": 10
     },
     {
-      "id": "ui_button_button",
-      "label": "Button()",
-      "degree": 9
-    },
-    {
       "id": "ui_button_buttonvariants",
       "label": "buttonVariants",
       "degree": 7
     }
   ],
   "surprises": [
+    {
+      "source": "Section Reveal Animation",
+      "target": "Framer Motion",
+      "source_files": [
+        "components/section-reveal.tsx",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories"
+    },
     {
       "source": "AlertDialogOverlay()",
       "target": "cn()",
@@ -761,21 +790,10 @@
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "connects across different repos/directories; bridges separate communities; peripheral node `AlertDialogTitle()` unexpectedly reaches hub `cn()`"
-    },
-    {
-      "source": "AlertDialogDescription()",
-      "target": "cn()",
-      "source_files": [
-        "components/ui/alert-dialog.tsx",
-        "lib/utils.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "connects across different repos/directories; bridges separate communities; peripheral node `AlertDialogDescription()` unexpectedly reaches hub `cn()`"
     }
   ],
   "tokens": {
     "input": 32747,
-    "output": 1766
+    "output": 2882
   }
 }

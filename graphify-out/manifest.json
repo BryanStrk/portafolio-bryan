@@ -10,9 +10,9 @@
     "semantic_hash": "3cb9f57337be2aa4ed49b4aa8384d241"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/next-env.d.ts": {
-    "mtime": 1779992932.4492302,
-    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
-    "semantic_hash": "2a74d3909800ca5467fa83b0ab4a4890"
+    "mtime": 1779997139.750527,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/package.json": {
     "mtime": 1779992308.570589,
@@ -35,9 +35,14 @@
     "semantic_hash": "7c1d7ec29da6125893cbf3d4a1da012c"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/app/page.tsx": {
-    "mtime": 1779992308.5606513,
-    "ast_hash": "84d4664749bd99e5b71d00403f54ae1c",
-    "semantic_hash": "84d4664749bd99e5b71d00403f54ae1c"
+    "mtime": 1780007257.3272588,
+    "ast_hash": "331c24952de6ece32ae27b30372cad6c",
+    "semantic_hash": "331c24952de6ece32ae27b30372cad6c"
+  },
+  "/Users/bryanpa/proyectos/portafolio-bryan/.claude/settings.local.json": {
+    "mtime": 1780007283.1988475,
+    "ast_hash": "dc99836d7fb9da01b4027a4b8aa19f5e",
+    "semantic_hash": "dc99836d7fb9da01b4027a4b8aa19f5e"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/projects.tsx": {
     "mtime": 1779992308.5623817,
@@ -50,24 +55,39 @@
     "semantic_hash": "3cd89febe6ca9cb784ba567481e50b5d"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/hero.tsx": {
-    "mtime": 1779992308.5618823,
-    "ast_hash": "e7563d3cadd97f6fad8c54d806de3e1b",
-    "semantic_hash": "e7563d3cadd97f6fad8c54d806de3e1b"
+    "mtime": 1780007270.3760278,
+    "ast_hash": "7a0e49f2bd23ab2d298f5bfcb8310024",
+    "semantic_hash": "7a0e49f2bd23ab2d298f5bfcb8310024"
+  },
+  "/Users/bryanpa/proyectos/portafolio-bryan/components/experience.tsx": {
+    "mtime": 1779998886.6082726,
+    "ast_hash": "899a9587b475bb2319f5e8c007f8cbaf",
+    "semantic_hash": "899a9587b475bb2319f5e8c007f8cbaf"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/cursor.tsx": {
     "mtime": 1779992308.5613816,
     "ast_hash": "e0ac9c14bffad4ff11f6d1b47cb9aff6",
     "semantic_hash": "e0ac9c14bffad4ff11f6d1b47cb9aff6"
   },
+  "/Users/bryanpa/proyectos/portafolio-bryan/components/grid-background.tsx": {
+    "mtime": 1780007252.0773683,
+    "ast_hash": "3297a9d1b73f1cb464da09e797c2930d",
+    "semantic_hash": "3297a9d1b73f1cb464da09e797c2930d"
+  },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/particles.tsx": {
     "mtime": 1779992308.5620763,
     "ast_hash": "267d062a6a3877e9d9924ea6e64579b0",
     "semantic_hash": "267d062a6a3877e9d9924ea6e64579b0"
   },
+  "/Users/bryanpa/proyectos/portafolio-bryan/components/approach.tsx": {
+    "mtime": 1779998914.3446102,
+    "ast_hash": "a8efc1601efcf976bec3f7d62af7c73d",
+    "semantic_hash": "a8efc1601efcf976bec3f7d62af7c73d"
+  },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/contact.tsx": {
-    "mtime": 1779992308.5612812,
-    "ast_hash": "b2ad730b28b6f05ce6609ce4e911d0b3",
-    "semantic_hash": "b2ad730b28b6f05ce6609ce4e911d0b3"
+    "mtime": 1780004790.627029,
+    "ast_hash": "3b63c80da73de68bf12b19bb085d5268",
+    "semantic_hash": "3b63c80da73de68bf12b19bb085d5268"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/project-card.tsx": {
     "mtime": 1779992308.5622628,
@@ -98,6 +118,11 @@
     "mtime": 1779992308.5616817,
     "ast_hash": "837472630240b40ca58b6633e00a3938",
     "semantic_hash": "837472630240b40ca58b6633e00a3938"
+  },
+  "/Users/bryanpa/proyectos/portafolio-bryan/components/skills-bento.tsx": {
+    "mtime": 1779998950.212831,
+    "ast_hash": "5ceebd43b087908bd4d6648cdb6d4715",
+    "semantic_hash": "5ceebd43b087908bd4d6648cdb6d4715"
   },
   "/Users/bryanpa/proyectos/portafolio-bryan/components/section-reveal.tsx": {
     "mtime": 1779992308.562609,
