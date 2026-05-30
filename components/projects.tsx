@@ -1,6 +1,6 @@
-import { ProjectCard } from "@/components/project-card"
- 
-const projects = [
+import { ProjectCard, type ProjectCardData } from "@/components/project-card"
+
+const projects: ProjectCardData[] = [
   {
     title: "Library Management System",
     description:
@@ -8,7 +8,14 @@ const projects = [
     tags: ["Java", "MySQL", "Angular", "Full Stack"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/biblioteca-backend.git",
-    status: "In Prod" as const,
+    status: "In Prod",
+    mockup: {
+      kind: "browser",
+      // TODO: src — añadir public/projects/library-management.png
+      image: null,
+      urlLabel: "library-management.local",
+      alt: "Captura del sistema de gestión de biblioteca",
+    },
   },
   {
     title: "Smart Menu (Team Project)",
@@ -17,7 +24,14 @@ const projects = [
     tags: ["Java", "Spring Boot", "Full Stack", "Team Project"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/smart-menu-back.git",
-    status: "In Prod" as const,
+    status: "In Prod",
+    mockup: {
+      kind: "browser",
+      // TODO: src — añadir public/projects/smart-menu.png
+      image: null,
+      urlLabel: "smart-menu.app",
+      alt: "Captura de Smart Menu",
+    },
   },
   {
     title: "Transport API",
@@ -26,7 +40,21 @@ const projects = [
     tags: ["Spring Boot", "MongoDB", "API REST", "Java"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/api-transporte-mercancias-springboot-mongodb.git",
-    status: "In Prod" as const,
+    status: "In Prod",
+    mockup: {
+      kind: "terminal",
+      title: "~/transport-api ▸ zsh",
+      lines: [
+        { kind: "prompt", text: 'curl -s http://localhost:8080/api/envios/SEV-203' },
+        { kind: "output", text: '{' },
+        { kind: "output", text: '  "id": "SEV-203",' },
+        { kind: "output", text: '  "origen": "Sevilla",' },
+        { kind: "output", text: '  "destino": "Madrid",' },
+        { kind: "output", text: '  "estado": "EN_RUTA",' },
+        { kind: "output", text: '  "peso_kg": 1240' },
+        { kind: "output", text: '}' },
+      ],
+    },
   },
   {
     title: "Video Club System",
@@ -35,7 +63,14 @@ const projects = [
     tags: ["Java", "MVC", "MySQL", "Backend"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/video_club_app_backend.git",
-    status: "In Prod" as const,
+    status: "In Prod",
+    mockup: {
+      kind: "browser",
+      // TODO: src — añadir public/projects/video-club.png
+      image: null,
+      urlLabel: "video-club.local",
+      alt: "Captura del sistema de Video Club",
+    },
   },
   {
     title: "Java VideoClub App",
@@ -44,7 +79,24 @@ const projects = [
     tags: ["Java", "Backend", "Logic", "OOP"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/videoClub_app_Java_puro.git",
-    status: "In Prod" as const,
+    status: "In Prod",
+    mockup: {
+      kind: "code",
+      filename: "AlquilerService.java",
+      lines: [
+        "public class AlquilerService {",
+        "    private final ClienteRepo clientes;",
+        "    private final PeliculaRepo peliculas;",
+        "",
+        "    public Alquiler alquilar(Long clienteId,",
+        "                             Long peliculaId) {",
+        "        var cliente = clientes.find(clienteId);",
+        "        var peli = peliculas.find(peliculaId);",
+        "        return new Alquiler(cliente, peli);",
+        "    }",
+        "}",
+      ],
+    },
   },
   {
     title: "Portfolio Web",
@@ -53,10 +105,17 @@ const projects = [
     tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     liveUrl: "",
     githubUrl: "https://github.com/BryanStrk/portafolio-bryan.git",
-    status: "In Dev" as const,
+    status: "In Dev",
+    mockup: {
+      kind: "browser",
+      // TODO: src — añadir public/projects/portfolio.png
+      image: null,
+      urlLabel: "bryanpaico.dev",
+      alt: "Captura del portfolio personal",
+    },
   },
 ]
- 
+
 export function Projects() {
   return (
     <section id="projects" className="py-24">
@@ -73,7 +132,7 @@ export function Projects() {
             datos. Cada tarjeta destaca stack, contexto y acceso al código de forma visual.
           </p>
         </div>
- 
+
         <div className="grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} index={index + 1} {...project} />
