@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { ReactNode, useEffect, useState } from "react"
 
 export function SectionReveal({ children }: { children: ReactNode }) {
+  const reducedMotion = useReducedMotion()
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -12,7 +13,7 @@ export function SectionReveal({ children }: { children: ReactNode }) {
     setIsMobile(isIOS || isMobileWidth)
   }, [])
 
-  if (isMobile) {
+  if (isMobile || reducedMotion) {
     return <>{children}</>
   }
 
