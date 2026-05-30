@@ -1,28 +1,12 @@
 import Image from "next/image"
-import {
-  ArrowRight,
-  Code2,
-  Database,
-  Download,
-  GitBranch,
-  Globe,
-  Server,
-  Sparkles,
-} from "lucide-react"
+import { ArrowRight, CircleCheck, Clock, Download, MapPin } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { ImageCarousel } from "@/components/image-carousel"
 import { SectionReveal } from "@/components/section-reveal"
+import { IMAGES } from "@/lib/images"
 import { cn } from "@/lib/utils"
-
-const skills = [
-  { label: "Angular", icon: Globe },
-  { label: "TypeScript", icon: Code2 },
-  { label: "Java", icon: Code2 },
-  { label: "MySQL", icon: Database },
-  { label: "Spring Boot", icon: Server },
-  { label: "Git", icon: GitBranch },
-]
 
 const stats = [
   { value: "6+", label: "Proyectos" },
@@ -48,8 +32,8 @@ export function About() {
               </h2>
             </div>
 
-            <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 md:grid-rows-3 md:gap-5">
-              <Card className={cn(cardBase, "md:col-span-2 md:row-span-2")}>
+            <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3 md:gap-5">
+              <Card className={cn(cardBase, "md:col-span-2")}>
                 <div className="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
 
                 <div className="relative overflow-hidden rounded-xl border border-white/10 bg-card/70">
@@ -60,19 +44,12 @@ export function About() {
                       <span className="h-2 w-2 rounded-full bg-emerald-500/40" />
                     </div>
                     <div className="ml-2 flex-1 rounded-md border border-white/6 bg-background/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground/60">
-                      bryanpaico.dev/work
+                      drive-arena.app
                     </div>
                   </div>
 
-                  <div className="relative h-44 overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgb(99_120_210/0.18),transparent_55%)]" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      {/* TODO: reemplazar por screenshot real del proyecto destacado en /public */}
-                      <span className="font-mono text-[10px] text-muted-foreground/35">
-                        // TODO: src/projects/featured.png
-                      </span>
-                    </div>
+                  <div className="relative h-56 overflow-hidden sm:h-72 md:h-[26rem]">
+                    <ImageCarousel images={IMAGES.driveArena} name="Drive Arena" />
                   </div>
                 </div>
 
@@ -100,8 +77,13 @@ export function About() {
                     ))}
                   </div>
 
-                  <a href="/cv-bryan-paico.pdf" download className="inline-block pt-1">
-                    <Button variant="outline" size="sm" className="gap-2 rounded-full">
+                  <a
+                    href={IMAGES.cv}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block pt-1"
+                  >
+                    <Button variant="gradient" size="sm" className="gap-2 rounded-full">
                       <Download className="h-3.5 w-3.5" />
                       Descargar CV
                     </Button>
@@ -109,125 +91,86 @@ export function About() {
                 </div>
               </Card>
 
-              <Card className={cn(cardBase, "md:row-span-2")}>
-                <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-sky-400/15 blur-3xl" />
-
-                <div className="relative flex h-full flex-col">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary">
-                      <Sparkles className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                        Mi stack
-                      </p>
-                      <h3 className="text-base font-semibold text-foreground md:text-lg">
-                        Lo que uso a diario
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-1 flex-wrap content-start gap-2">
-                    {skills.map((skill) => (
-                      <span
-                        key={skill.label}
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-primary/8 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:border-primary/35 hover:bg-primary/14"
-                      >
-                        <skill.icon className="h-3 w-3 opacity-70" />
-                        {skill.label}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-
-              <Card className={cn(cardBase)}>
-                <div className="pointer-events-none absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-emerald-400/10 blur-2xl" />
-
-                <div className="relative flex h-full items-center gap-4">
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-primary/10">
-                    <Image
-                      src="/bryan-about.jpg"
-                      alt="Foto de Bryan Paico"
-                      width={128}
-                      height={128}
-                      className="h-full w-full object-cover object-top"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="mb-1 flex items-center gap-1.5">
+              <div className="flex flex-col gap-4 md:gap-5">
+                <Card
+                  className={cn(
+                    cardBase,
+                    "aspect-[4/5] p-0 md:aspect-auto md:flex-[3]",
+                  )}
+                >
+                  <Image
+                    src={IMAGES.photo}
+                    alt="Foto de Bryan Paico, desarrollador full stack"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/75 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <div className="mb-1.5 flex items-center gap-1.5">
                       <span className="relative inline-flex h-1.5 w-1.5">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/40 opacity-75" />
-                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/80" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/85" />
                       </span>
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-400/85">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-400/90">
                         Disponible
                       </span>
                     </div>
-                    <p className="text-sm font-semibold text-foreground/95">Bryan Paico</p>
-                    <p className="text-xs text-muted-foreground">Full Stack Developer</p>
+                    <p className="text-base font-semibold text-foreground">Bryan Paico</p>
+                    <p className="text-xs text-muted-foreground">Desarrollador Full Stack</p>
                   </div>
-                </div>
-              </Card>
+                </Card>
 
-              <Card className={cn(cardBase)}>
-                <div className="pointer-events-none absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-amber-400/10 blur-2xl" />
+                <Card
+                  className={cn(
+                    cardBase,
+                    "bg-gradient-to-br from-purple-600/22 via-indigo-600/18 to-blue-600/22 p-5 hover:border-white/25 md:flex-[2]",
+                  )}
+                >
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
 
-                <div className="relative flex h-full flex-col gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className="relative inline-flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/40 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400/80" />
-                    </span>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-400/80">
-                      Actualmente construyendo
-                    </p>
+                  <div className="relative flex h-full flex-col justify-between gap-3">
+                    <div>
+                      <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
+                        Colaboremos
+                      </p>
+                      <h3 className="text-base font-semibold leading-tight text-foreground md:text-lg">
+                        ¿Empezamos un proyecto?
+                      </h3>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        Si tienes una idea o un equipo donde encajar a un junior fullstack,
+                        hablémoslo.
+                      </p>
+
+                      <ul className="mt-5 space-y-5 text-xs text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <MapPin className="h-3.5 w-3.5 shrink-0 text-primary/85" aria-hidden />
+                          Barcelona · Híbrido o remoto
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CircleCheck className="h-3.5 w-3.5 shrink-0 text-primary/85" aria-hidden />
+                          Disponible para incorporarme
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Clock className="h-3.5 w-3.5 shrink-0 text-primary/85" aria-hidden />
+                          Respondo en ~24h
+                        </li>
+                      </ul>
+                    </div>
+
+                    <Button
+                      asChild
+                      size="sm"
+                      className="gap-2 rounded-full self-start"
+                    >
+                      <a href="#contact">
+                        Empezar
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </a>
+                    </Button>
                   </div>
-                  <h3 className="text-sm font-semibold leading-snug text-foreground/90">
-                    Refactor visual y de rendimiento de este propio portfolio
-                  </h3>
-                  <p className="text-xs leading-relaxed text-muted-foreground">
-                    Migrando a Tailwind v4, limpiando capas de fondo y armando un sistema
-                    bento más coherente.
-                  </p>
-                </div>
-              </Card>
-
-              <Card
-                className={cn(
-                  cardBase,
-                  "border-white/10 bg-gradient-to-br from-purple-600/22 via-indigo-600/18 to-blue-600/22 hover:border-white/25",
-                )}
-              >
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
-
-                <div className="relative flex h-full flex-col justify-between gap-4">
-                  <div>
-                    <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
-                      Let&apos;s collaborate
-                    </p>
-                    <h3 className="text-base font-semibold leading-tight text-foreground md:text-lg">
-                      ¿Empezamos un proyecto?
-                    </h3>
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      Si tienes una idea o un equipo donde encajar a un junior fullstack,
-                      hablémoslo.
-                    </p>
-                  </div>
-
-                  <Button
-                    asChild
-                    size="sm"
-                    variant="gradient"
-                    className="gap-2 rounded-full self-start"
-                  >
-                    <a href="#contact">
-                      Empezar
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
-                  </Button>
-                </div>
-              </Card>
+                </Card>
+              </div>
             </div>
           </div>
         </SectionReveal>
