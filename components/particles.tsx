@@ -35,7 +35,7 @@ export function Particles() {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="touch-hide fixed inset-0 pointer-events-none overflow-hidden z-0">
       {particles.map((particle) => (
         <div
           key={particle.id}

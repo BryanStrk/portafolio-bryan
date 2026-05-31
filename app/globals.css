@@ -386,3 +386,16 @@
     display: none;
   }
 }
+
+/* === iOS Safari perf: quitar backdrop-blur del header + decoraciones pesadas en táctil === */
+@media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .header-pill {
+    background-color: oklch(0.155 0.018 262 / 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .touch-hide {
+    display: none;
+  }
+}

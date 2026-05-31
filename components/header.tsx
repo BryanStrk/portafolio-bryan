@@ -40,7 +40,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 md:px-6 pt-4">
-        <div className="blue-glow flex items-center justify-between rounded-full border border-white/10 bg-background/70 px-3 py-3 backdrop-blur-xl md:px-4">
+        <div className="header-pill blue-glow flex items-center justify-between rounded-full border border-white/10 bg-background/70 px-3 py-3 backdrop-blur-xl md:px-4">
           <a
             href="#home"
             className="rounded-full px-3 py-2 text-xl font-semibold tracking-[0.18em] text-primary uppercase"
