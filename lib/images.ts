@@ -37,6 +37,15 @@ export const IMAGES = {
     "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170238/Captura_de_pantalla_2026-05-30_a_las_21.43.12_jruokg.png",
     "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780170294/Captura_de_pantalla_2026-05-30_a_las_21.43.52_hvkayy.png",
   ],
+  bibDetector: [
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517826/Captura_de_pantalla_2026-06-27_a_las_1.50.20_lxdqxy.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517851/Captura_de_pantalla_2026-06-27_a_las_1.50.34_mwtfl8.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517856/Captura_de_pantalla_2026-06-27_a_las_1.50.49_nqiwez.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517866/Captura_de_pantalla_2026-06-27_a_las_1.51.02_snkths.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517896/Captura_de_pantalla_2026-06-27_a_las_1.51.23_vayfjx.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517907/Captura_de_pantalla_2026-06-27_a_las_1.51.35_e2bdwh.png",
+    "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1782517910/Captura_de_pantalla_2026-06-27_a_las_1.51.45_odvsf0.png",
+  ],
   apexFitness: [
     "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780171634/Captura_de_pantalla_2026-05-30_a_las_22.06.46_tu8vvh.png",
     "https://res.cloudinary.com/dutmn3xde/image/upload/f_auto,q_auto,w_1600/v1780171592/Captura_de_pantalla_2026-05-30_a_las_22.06.25_b9h1d0.png",

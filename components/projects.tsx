@@ -20,6 +20,23 @@ const projects: ProjectCardData[] = [
     },
   },
   {
+    title: "Bib Detector",
+    description:
+      "App de visión por computador que detecta números de dorsal en fotos de carreras mediante OCR. Frontend en React 19 + Tailwind y backend en FastAPI con EasyOCR, PostgreSQL y Cloudinary. Sistema de privacidad por magic link: cada corredor reclama sus fotos con galería privada, watermarks y descargas firmadas.",
+    tags: ["React", "FastAPI", "EasyOCR", "PostgreSQL"],
+    liveUrl: "https://bib-detector-frontend.vercel.app",
+    githubLinks: [
+      { label: "Frontend", url: "https://github.com/BryanStrk/bib-detector-frontend" },
+      { label: "Backend", url: "https://github.com/BryanStrk/bib-detector-backend" },
+    ],
+    status: "En producción",
+    mockup: {
+      kind: "carousel",
+      images: IMAGES.bibDetector,
+      urlLabel: "bib-detector-frontend.vercel.app",
+    },
+  },
+  {
     title: "EventoPass",
     description:
       "Plataforma de reserva de eventos (conciertos, festivales, deportes). Frontend en Angular y backend en Spring Boot, desplegada en producción.",
