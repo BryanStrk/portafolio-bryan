@@ -104,22 +104,6 @@ const projects: ProjectCardData[] = [
       urlLabel: "apex-fitness.app",
     },
   },
-  {
-    title: "Sistema de gestión de biblioteca",
-    description:
-      "Sistema full stack de gestión de biblioteca con frontend y backend separados. Incluye gestión de usuarios, préstamos y lógica de negocio conectada a base de datos.",
-    tags: ["Java", "MySQL", "Angular", "Full Stack"],
-    liveUrl: "",
-    githubUrl: "https://github.com/BryanStrk/biblioteca-backend.git",
-    status: "En producción",
-    mockup: {
-      kind: "browser",
-      // TODO: src — añadir public/projects/library-management.png
-      image: null,
-      urlLabel: "library-management.local",
-      alt: "Captura del sistema de gestión de biblioteca",
-    },
-  },
 ]
 
 export function Projects() {
