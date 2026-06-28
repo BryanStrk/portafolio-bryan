@@ -5,18 +5,18 @@ const projects: ProjectCardData[] = [
   {
     title: "Drive Arena",
     description:
-      "Plataforma de gestión para un resort experiencial de motorsport. Frontend en React + Vite y backend en Spring Boot con MySQL: CRUDs, sistema de gamificación y reservas.",
-    tags: ["React", "Vite", "Spring Boot", "MySQL"],
-    liveUrl: "",
+      "Plataforma de gestión para un resort experiencial de motorsport. Frontend en React + Vite (Vercel) y backend en Spring Boot 4 / Java 25 con MySQL, desplegado en VPS propio con Nginx + HTTPS. CRUDs, control de acceso por roles (ADMIN/TAQUILLA/TÉCNICO), gamificación y reservas.",
+    tags: ["React", "Vite", "Spring Boot", "MySQL", "Java 25"],
+    liveUrl: "https://drive-arena-frontend.vercel.app",
     githubLinks: [
       { label: "Frontend", url: "https://github.com/BryanStrk/drive-arena-frontend" },
       { label: "Backend", url: "https://github.com/BryanStrk/drive-arena-backend" },
     ],
-    status: "En desarrollo",
+    status: "En producción",
     mockup: {
       kind: "carousel",
       images: IMAGES.driveArena,
-      urlLabel: "drive-arena.app",
+      urlLabel: "drive-arena-frontend.vercel.app",
     },
   },
   {
